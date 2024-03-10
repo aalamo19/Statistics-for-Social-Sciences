@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="2_descriptiva_univariada_files/libs/clipboard/clipboard.min.js"></script>
+<script src="2_descriptiva_univariada_files/libs/quarto-html/tabby.min.js"></script>
+<script src="2_descriptiva_univariada_files/libs/quarto-html/popper.min.js"></script>
+<script src="2_descriptiva_univariada_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="2_descriptiva_univariada_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="2_descriptiva_univariada_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="2_descriptiva_univariada_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="2_descriptiva_univariada_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Andreina Alamo">
+  <title>Estadística Descriptiva Univarada</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="2_descriptiva_univariada_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="2_descriptiva_univariada_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="2_descriptiva_univariada_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="logo.css">
+  <link href="2_descriptiva_univariada_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="2_descriptiva_univariada_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="2_descriptiva_univariada_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="2_descriptiva_univariada_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Estadística Descriptiva Univarada</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Andreina Alamo 
+</div>
+</div>
+</div>
+
+</section>
+<section id="presentación-tabular-de-una-variable" class="title-slide slide level1 smaller center">
+<h1>Presentación tabular de una variable</h1>
+<p>La presentación de un conjunto de datos suele hacerse indicando las frecuencias de aparición de la variable. La <strong>frecuencia absoluta</strong> de un suceso A es el número de veces que se observa A, la <strong>frecuencia relativa</strong> se define por:</p>
+<p><span class="math display">\[fr(A) = \frac{\text{No. de veces que se observa A}}{\text{No. total de datos}}\]</span> Para una interpretación más sencilla también se puede multiplicar por 100.</p>
+</section>
+
+<section>
+<section id="tabla-o-distribución-de-frecuencias" class="title-slide slide level1 center">
+<h1>Tabla o distribución de frecuencias</h1>
+
+</section>
+<section id="variables-cualitativas" class="slide level2 center">
+<h2>Variables cualitativas</h2>
+<p>En el caso de una variable cualitativa, se indican sus clases y sus frecuencias. Cuando no es de escala ordinal se suele ordenar de mayor a menor frecuencia.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Nivel educativo</th>
+<th style="text-align: right;">F. Absoluta</th>
+<th style="text-align: right;">F. Relativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bachillerato</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">0.66</td>
+</tr>
+<tr class="even">
+<td>Pregrado</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.14</td>
+</tr>
+<tr class="odd">
+<td>Maestría</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">?</td>
+</tr>
+<tr class="even">
+<td>Doctorado</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">?</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">100%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2 center">
+
+<p>Se obtiene la siguiente table. Note que las frecuencias fueron multiplacadas para interpretar los resultados en términos de porcentajes.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Nivel educativo</th>
+<th style="text-align: right;">F. Absoluta</th>
+<th style="text-align: right;">F. Relativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bachillerato</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">66%</td>
+</tr>
+<tr class="even">
+<td>Pregrado</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14%</td>
+</tr>
+<tr class="odd">
+<td>Maestría</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16%</td>
+</tr>
+<tr class="even">
+<td>Doctorado</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4%</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">100%</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Si se tuvieran muchas clases se pueden agrupar.</p>
+</div>
+</section>
+<section class="slide level2 center">
+
+<p>Ahora, adicional a esta información tenemos la <strong>frecuencia absoluta acumulativa</strong>, la cual se calcula de la siguiente manera:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Categoría</th>
+<th style="text-align: left;">F. Absoluta acumulada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(k_1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N_1 = n_1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k_2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N_2 = n_1 + n_2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k_p\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N_p = n_1+ n_2 + \dots + n_p\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Donde p es el número de clases.</p>
+</section>
+<section class="slide level2 center">
+
+<p>Finalmente tenemos la <strong>frecuencia relativa acumulativa</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Categoría</th>
+<th style="text-align: left;">F. Relativa acumulada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(k_1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Fr_1 = fr_1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k_2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Fr_2 = fr_1 + fr_2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k_p\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Fr_p = fr_1+ fr_2 + \dots + fr_p\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Las frecuencias acumuladas cobran sentido con una variable cualitativa ordinal</p>
+</section>
+<section id="ejemplo-1" class="slide level2 center">
+<h2>Ejemplo 1</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nivel educativo</th>
+<th style="text-align: right;">F. Absoluta</th>
+<th style="text-align: right;">F. Relativa</th>
+<th style="text-align: right;">F. Abs.Acum.</th>
+<th style="text-align: right;">F. Rel.Acum.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bachillerato</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">66%</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">66%</td>
+</tr>
+<tr class="even">
+<td>Pregrado</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14%</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">80%</td>
+</tr>
+<tr class="odd">
+<td>Maestría</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16%</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">?</td>
+</tr>
+<tr class="even">
+<td>Doctorado</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">?</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejemplo-1-1" class="slide level2 center">
+<h2>Ejemplo 1</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nivel educativo</th>
+<th style="text-align: right;">F. Absoluta</th>
+<th style="text-align: right;">F. Relativa</th>
+<th style="text-align: right;">F. Abs.Acum.</th>
+<th style="text-align: right;">F. Rel.Acum.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bachillerato</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">66%</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">66%</td>
+</tr>
+<tr class="even">
+<td>Pregrado</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14%</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">80%</td>
+</tr>
+<tr class="odd">
+<td>Maestría</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16%</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr class="even">
+<td>Doctorado</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4%</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="variables-cuantitativas" class="slide level2 center">
+<h2>Variables cuantitativas</h2>
+<p>Para el caso de variables cuantitativas discretas con pocas clases, las tablas se realizan de la misma forma. Ahora, si la variable tiene muchos valores distintos o si es continua se recomienda agrupar las clases siguiendo los siguientes pasos:</p>
+</section>
+<section id="pasos-para-construir-clases" class="slide level2 smaller center">
+<h2>Pasos para construir clases</h2>
+<ol type="1">
+<li class="fragment"><p><strong>Determina el Tamaño de la Muestra ( n ):</strong> Número total de observaciones en el conjunto de datos.</p></li>
+<li class="fragment"><p><strong>Determina el número de clases:</strong> Hay varios criterios y la elección queda principalmente a criterio del investigador. Se puede utilizar una particicón intuiutiva o <span class="math inline">\(k = \sqrt{n}\)</span>, pero en el curso se recomendará usar <em>la regla de Sturges</em> como sigue: . . . <span class="math display">\[ k = 1 + \text{log}_2(n) =  1 + \frac{\text{log}_{10}(n)}{\text{log}_{10}(2)} = 1 + 3.32\times\text{log}_{10}(n)\]</span> Este se redondea al siguiente entero.</p></li>
+<li class="fragment"><p><strong>Establece el Ancho de Clase ( w ):</strong> Divida el rango (máximo - mínimo) de sus datos por el número de clases ( k ) para determinar el ancho de clase. La fórmula es (<span class="math inline">\(w = \frac{\text{Rango}}{k}\)</span>). En caso de una variable discreta se redondea al siguiente entero.</p></li>
+<li class="fragment"><p><strong>Construye las Clases:</strong> Utiliza el ancho de clase ( w ) para crear intervalos o clases que cubran todo el rango de los datos. Cada observación debe corresponder a una clase.</p></li>
+</ol>
+</section>
+<section id="ejemplo-2" class="slide level2 smaller center">
+<h2>Ejemplo 2</h2>
+<p>Tenemos los siguientes datos sobre el tiempo en minutos al realizar una operación.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 14 13 17 22 19 26 25 20 24 27 24 20 20 19 21 23 23 22 16 15 21 16 22 19 29
+[26] 13 19 20 29 20 23 26 23 25 35 20 28 17 24 15 22 23 25</code></pre>
+</div>
+</div>
+<p>Calculamos el número de clases a partir de la regla de sturges.</p>
+<p><span class="math display">\[ k =  1 + 3.32\times\text{log}_{10}(43) = 6.42 \approx 7\]</span> EL ancho de la clase quedará de <span class="math inline">\(w = \frac{(35-13)}{7}=\frac{22}{7}=3.14\approx 4\)</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>Obtenemos:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Intervalo</th>
+<th style="text-align: right;">F. Absoluta</th>
+<th style="text-align: right;">F. Relativa</th>
+<th style="text-align: right;">F. Abs.Acum.</th>
+<th style="text-align: right;">F. Rel.Acum.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>13-16</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">16.3%</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">16.3%</td>
+</tr>
+<tr class="even">
+<td>17-20</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">27.9%</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">44.2%</td>
+</tr>
+<tr class="odd">
+<td>21-24</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">32.6%</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">76.8%</td>
+</tr>
+<tr class="even">
+<td>25-28</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">16.3%</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">93.1%</td>
+</tr>
+<tr class="odd">
+<td>29-32</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4.6%</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">97.7%</td>
+</tr>
+<tr class="even">
+<td>33-35</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.3%</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">100.0%</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">100.0%</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="variable-continua" class="slide level2 center">
+<h2>Variable continua</h2>
+<p>En este caso las clases se representan como intervalos cerrados a izquierda y abiertos a derecha. Por ejemplo en el caso del tiempo. <span class="math inline">\([20-25),[25-30),[30-35)\)</span>,…</p>
+<p>En este caso no se redondea el ancho de la clase.</p>
+</section></section>
+<section>
+<section id="representación-semi-gráfica" class="title-slide slide level1 center">
+<h1>Representación semi-gráfica</h1>
+
+</section>
+<section id="diagrama-de-tallo-y-hojas" class="slide level2 center">
+<h2>Diagrama de tallo y hojas</h2>
+<ul>
+<li class="fragment"><strong>Descripción:</strong> Procedimiento para variables cuantitativas. Consiste en dividir cada número en su parte de tallo (los dígitos principales) y su parte de hojas (el dígito final).</li>
+<li class="fragment"><strong>Pros:</strong> Permite visualizar la frecuencia de los datos de forma más amigable, así como identificar posibles sesgos y simetrías.</li>
+<li class="fragment"><strong>Contras:</strong> No es buena opción cuando hay muchas hojas.</li>
+</ul>
+</section>
+<section id="pasos" class="slide level2 smaller center">
+<h2>Pasos</h2>
+<ol type="1">
+<li class="fragment"><p>Redondear los datos a dos o tres cifras significativas, expresándolos en unidades convenientes.</p></li>
+<li class="fragment"><p>Disponerlos en una tabla con dos columnas separadas por una línea como sigue: . . . 2.1. Para datos con dos dígitos, escribir a la izquierda de la línea los dígitos de las decenas —que forma el tallo— y a la derecha las unidades, que serán las hojas. Por ejemplo, 87 se escribe 8|7. . . . 2.2. Para datos con tres dígitos el tallo estará formado por los dígitos de las centenas y decenas, que se escribirán a la izquierda, separados de las unidades. Por ejemplo, 127 será 12|7.</p></li>
+<li class="fragment"><p>Cada tallo define una clase, y se escribe sólo una vez. El número de «hojas» representa la frecuencia de dicha clase.</p></li>
+</ol>
+</section>
+<section id="ejemplo-3" class="slide level2 smaller center">
+<h2>Ejemplo 3</h2>
+<ol type="1">
+<li class="fragment"><p>Datos recogidos en cm: 11,357; 12,542; 11,384; 12,431; 14,212; 15,213; 13,300; 11,300; 17,206; 12,710; 13,455; 16,143; 12,162; 12,721; 13,420; 14,698.</p></li>
+<li class="fragment"><p>Datos redondeados expresados en mm: 114; 125; 114; 124; 142; 152; 133; 113; 172; 127; 135; 161; 122; 127; 134; 147.</p></li>
+<li class="fragment"><p>Diagrama de tallo y hojas, datos en mm: . . .<br>
+<img data-src="tallo_hoja.png" height="300" alt="tallo_hoja"></p></li>
+</ol>
+</section></section>
+<section>
+<section id="representación-gráfica" class="title-slide slide level1 center">
+<h1>Representación gráfica</h1>
+
+</section>
+<section id="histograma" class="slide level2 smaller center">
+<h2>Histograma</h2>
+<ul>
+<li class="fragment"><strong>Descripción:</strong> El histograma es un gráfico de barras que muestra la distribución de los valores de una variable continua en intervalos llamados clases. La altura de las barras está dada por las fecuencia.</li>
+<li class="fragment"><strong>Interpretación:</strong> Permite visualizar la forma y la dispersión de los datos, así como identificar posibles sesgos, simetrías y patrones de distribución.</li>
+<li class="fragment"><strong>Pros:</strong> Es útil para comprender la distribución de los datos y detectar la presencia de valores atípicos.</li>
+<li class="fragment"><strong>Contras:</strong> La interpretación puede variar dependiendo de cómo se elijan los intervalos de clase.</li>
+</ul>
+</section>
+<section id="ejemplo-4" class="slide level2 center">
+<h2>Ejemplo 4</h2>
+<p>Datos sobre epilepsia</p>
+
+<img data-src="2_descriptiva_univariada_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<section id="diagrama-de-barras" class="slide level2 center">
+<h2>Diagrama de barras</h2>
+<ul>
+<li class="fragment"><strong>Descripción:</strong> El diagrama de barras es un gráfico que representa la frecuencia de las categorías de una variable categórica mediante barras rectangulares.</li>
+<li class="fragment"><strong>Interpretación:</strong> Permite comparar la frecuencia de cada categoría y visualizar fácilmente las diferencias entre ellas.</li>
+<li class="fragment"><strong>Pros:</strong> Es efectivo para comparaciones visuales y fácil de entender para una amplia audiencia.</li>
+<li class="fragment"><strong>Contras:</strong> No es adecuado para variables continuas o para representar relaciones numéricas precisas.</li>
+</ul>
+</section>
+<section id="ejemplo-5" class="slide level2 center">
+<h2>Ejemplo 5</h2>
+<p>Datos sobre SIDA en Australia</p>
+
+<img data-src="2_descriptiva_univariada_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="gráfico-de-torta" class="slide level2 smaller center">
+<h2>Gráfico de torta</h2>
+<ul>
+<li class="fragment"><p><strong>Descripción:</strong> El gráfico de torta muestran las frecuencias relativas de cada categoría en una variable categórica mediante sectores circulares. El ángulo correspondiente a cada categoría se cálcula como <span class="math inline">\(f_i \times 360°\)</span></p></li>
+<li class="fragment"><p><strong>Interpretación:</strong> Facilita la visualización de la distribución relativa de las categorías y destaca las proporciones relativas.</p></li>
+<li class="fragment"><p><strong>Pros:</strong> Es intuitivo y fácil de interpretar para mostrar proporciones.</p></li>
+<li class="fragment"><p><strong>Contras:</strong> Puede resultar difícil comparar las proporciones exactas de las categorías y no es adecuado para representar muchos niveles o categorías.</p></li>
+</ul>
+</section>
+<section id="ejemplo-5-1" class="slide level2 center">
+<h2>Ejemplo 5</h2>
+<p>Datos sobre SIDA en Australia</p>
+
+<img data-src="2_descriptiva_univariada_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="gráfico-de-línea" class="slide level2 center">
+<h2>Gráfico de línea</h2>
+<ul>
+<li class="fragment"><strong>Descripción:</strong> El gráfico de línea muestra la relación entre dos variables continuas a través de puntos conectados por líneas.</li>
+<li class="fragment"><strong>Interpretación:</strong> Permite visualizar tendencias, cambios y patrones en los datos a lo largo del tiempo u otro factor.</li>
+<li class="fragment"><strong>Pros:</strong> Es útil para identificar tendencias, estacionalidades y cambios a lo largo del tiempo.</li>
+<li class="fragment"><strong>Contras:</strong> Puede resultar complicado interpretar si hay muchos puntos o si la relación es compleja.</li>
+</ul>
+</section>
+<section id="ejemplo-4-1" class="slide level2 center">
+<h2>Ejemplo 4</h2>
+
+<img data-src="2_descriptiva_univariada_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="gráfico-de-pareto" class="slide level2 center">
+<h2>Gráfico de Pareto</h2>
+<ul>
+<li class="fragment"><strong>Descripción:</strong> El gráfico de Pareto es un gráfico de barras que ordena las categorías por su frecuencia de mayor a menor. Se construye ordenando la frecuencia relativa de los datos y cada categoría se representa por un rectángulo cuya altura es dicha frecuencua.</li>
+<li class="fragment"><strong>Interpretación:</strong> Permite identificar las categorías más importantes o significativas en función de su frecuencia relativa.</li>
+<li class="fragment"><strong>Pros:</strong> Destaca las categorías más relevantes.</li>
+<li class="fragment"><strong>Contras:</strong> Es mejor con variables cualitativas.</li>
+</ul>
+</section>
+<section id="ejemplo-5-2" class="slide level2 center">
+<h2>Ejemplo 5</h2>
+<p>Datos sobre SIDA en Australia</p>
+
+<img data-src="2_descriptiva_univariada_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section></section>
+<section id="medidas-descriptivas" class="title-slide slide level1 smaller center">
+<h1>Medidas descriptivas</h1>
+<p>Las variables cuantitativas se pueden resumir con varios tipos de medidas, que permiten caracterizar su comportamiento bien sea en la muestra o en la población observada:</p>
+<ul>
+<li class="fragment">Tendencia central.</li>
+<li class="fragment">Localización.</li>
+<li class="fragment">Dispersión o variabilidad.</li>
+<li class="fragment">Forma.</li>
+</ul>
+<div class="fragment">
+<p>Dado que en general no se acostumbra a medir toda la población (censo), generalmente las mediciones se hacen sobre una muestra, por lo que las medidas que se presentan a continuación se denominan “muestrales”.</p>
+</div>
+</section>
+
+<section>
+<section id="medidas-de-tendencia-central" class="title-slide slide level1 center">
+<h1>Medidas de tendencia central</h1>
+<p>Existen diferentes medidas de tendencia central. Las más utilizadas son la media aritmética (promedio), la mediana, y la moda.</p>
+<p>Como su nombre lo indica, el propósito consiste en proporcionar un valor que describa adecuadamente el “centro” de los datos.</p>
+</section>
+<section id="media-aritmética" class="slide level2 center">
+<h2>Media aritmética</h2>
+<p>La media es el centro de gravedad de los datos y se calcula como la suma de todos los valores dividida por el número de observaciones, como sigue a continuación.</p>
+<p><span class="math display">\[\bar{x}=\frac{\sum^n_{i=1} x_i}{n} = \frac{x_1 + x_2 + \dots + x_n}{n}\]</span><br>
+</p>
+<p>El símbolo <span class="math inline">\(\sum\)</span> denota sumatoria de varios elementos según se indique en los índices.</p>
+</section>
+<section id="características-de-la-media" class="slide level2 center">
+<h2>Características de la media</h2>
+<ul>
+<li class="fragment">Otorga a todas las observaciones la misma importancia relativa, <span class="math inline">\(\frac{1}{n}\)</span>.</li>
+<li class="fragment">Corresponde al centro de gravedad de los datos, es decir, <span class="math inline">\(\sum^n_{i=1} (x_i− \bar{x})=0\)</span></li>
+<li class="fragment">Es sensible a datos atípicos.</li>
+<li class="fragment">No es una buena representación del centro de los datos cuando su distribución es marcadamente asimétrica (sesgada).</li>
+</ul>
+</section>
+<section id="media-para-datos-agrupados" class="slide level2 smaller center">
+<h2>Media para datos agrupados</h2>
+<p><strong>Marca de clase:</strong> Es el punto medio de cada intervalo y se calcula como: <span class="math inline">\(y_j=\frac{l_{j-1}+l_{j}}{2}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Intervalo</th>
+<th style="text-align: right;">F. Absoluta</th>
+<th style="text-align: right;">F. Relativa</th>
+<th style="text-align: right;">Marca de clase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(l_0-l_1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(n_1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(fr_1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(y_1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_2-l_3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(n_2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(fr_2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(y_2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(l_{p-1}-l_p\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(n_p\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(fr_p\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(y_p\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>La media se calcula como:</p>
+<p><span class="math inline">\(\bar{y} \approx \frac{1}{n} \sum_{i=1}^p n_i y_i =\sum_{i=1}^pfr_iy_i\)</span></p>
+</div>
+</section>
+<section id="media-aritmética-ponderada" class="slide level2 smaller center">
+<h2>Media aritmética ponderada</h2>
+<p>La media aritmética otorga igual peso a cada observación: <span class="math inline">\(\frac{1}{n}\)</span>. Sin embargo, en algunas ocasiones la importancia relativa de los datos no es la misma, por lo que los datos son ponderados de tal forma que esta importancia se ve reflejada en las medidas estadísticas correspondientes.</p>
+<p>La media aritmética ponderada es un promedio que tiene en cuenta la importancia relativa de cada uno de los datos, la cual se calcula como: <span class="math inline">\(M(x) = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span> donde <span class="math inline">\(w_i\)</span> es la ponderación y <span class="math inline">\(x_i\)</span> es el dato, la clase o la marca de clase correspondiente.</p>
+<p>Entre los ejemplos más conocidos tenemos nuestro Promedio Aritmético Ponderado Acumulado - PAPA.</p>
+</section>
+<section id="mediana" class="slide level2 center">
+<h2>Mediana</h2>
+<p>La mediana o percentil 50 del conjunto de datos, corresponde al valor que acumula el 50% de los datos, la cual se calcula como:</p>
+<p><span class="math inline">\(P_{50}(x)= Me(x)= \left\{ \begin{array}{lcc} x_{\left(\frac{n+1}{2}\right)} &amp; si &amp; \text{n es impar}\\ \\ \frac{x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)} }{2} &amp; si &amp; \text{n es par} \end{array} \right.\)</span></p>
+<p>donde <span class="math inline">\(x_{(i)}\)</span> es la observación que ocupa la i-ésima posición del conjunto de datos ordenado ascendentemente.</p>
+</section>
+<section id="características-de-la-mediana" class="slide level2 smaller center">
+<h2>Características de la mediana</h2>
+<ul>
+<li class="fragment">Se calcula para variables medidas en al menos una escala ordinal.</li>
+<li class="fragment">No se basa en la magnitud de los datos.</li>
+<li class="fragment">Es robusta (no se ve afectada) a datos atípicos.</li>
+<li class="fragment">Se recomienda su uso cuando la distribución de los datos es considerablemente asímetrica (sesgada).</li>
+<li class="fragment">La media y la mediana coinciden cuando la distribución de los datos es simétrica.</li>
+<li class="fragment">No tiene propiedades aritméticas directas y sencillas de aplicar como la media aritmética.</li>
+</ul>
+</section>
+<section id="mediana-en-datos-agrupados" class="slide level2 center">
+<h2>Mediana en datos agrupados</h2>
+<p>Dada una tabla de frecuencias:</p>
+<ol type="1">
+<li class="fragment"><p>Definimos el índice del primer intervalo cuya frecuencia relativa es mayor o igual a 50% que denotaremos <span class="math inline">\(k\)</span> y el ancho del intervalo que denotamos <span class="math inline">\(w\)</span>.</p></li>
+<li class="fragment"><p>Calculamos la mediana mediante la siguiente expresión: . . . <span class="math display">\[P_{50} = l_{k-1}+w \left( \frac{0.5n-N_{k-1}}{n_k}\right)\]</span></p></li>
+</ol>
+</section>
+<section id="ejemplo-6" class="slide level2 center">
+<h2>Ejemplo 6</h2>
+<p>Tenemos los siguientes datos:</p>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -2.38  0.78 -0.69 -1.10  1.96 -0.47  1.62 -1.49 -0.52</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Su media y su mediana son:</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.2544444</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="do">## Mediana</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.52</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="moda" class="slide level2 center">
+<h2>Moda</h2>
+<p>Esta medida se usa en las variables cualitativas o cuantitativas discretas e indica el valor más frecuente. Se puede ver fácilmente con la frecuencia absoluta cuando los datos no están agrupados.</p>
+<p>Para <strong>datos agrupados</strong> se calcula como sigue:</p>
+<p><span class="math display">\[M_d(x) = l_{k-1} + w\left( \frac{n_k-n_{k-1}}{2n_k-n_{k-1}-n_{k+1}}\right)\]</span> Donde k es el intervalo de mayor frecuencia absoluta Por ejemplo, para nuestro ejemplo de estudiantes de diferentes programas la moda era bachillerato.</p>
+</section>
+<section id="ejemplo-7" class="slide level2 center">
+<h2>Ejemplo 7</h2>
+<p>Tenemos los siguientes datos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">print</span>(x_cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Panamá"   "Panamá"   "Colombia" "Colombia" "Panamá"   "Panamá"   "Colombia"
+[8] "Panamá"   "Panamá"  </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Sus frecuencias relativas son: . . .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">table</span>(x_cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x_cat
+Colombia   Panamá 
+       3        6 </code></pre>
+</div>
+</div>
+<p>Por ende, su moda es: . . .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">Mode</span>(x_cat) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Panamá"
+attr(,"freq")
+[1] 6</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-8-datos-agrupados" class="slide level2 smaller center">
+<h2>Ejemplo 8 datos agrupados</h2>
+<p>Se tienen los siguientes datos y se obtiene por Sturges k=6:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  8.14 -2.04  8.04 10.62  9.32  4.21  9.97  1.35  5.40  0.93  5.34  8.40
+[13] -1.30  6.52  3.94  8.18  7.88  7.15  4.60  2.45  4.41  3.25 -0.28  5.81
+[25]  6.10</code></pre>
+</div>
+</div>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Intervalo</th>
+<th style="text-align: right;">F. Absoluta</th>
+<th style="text-align: right;">F. Relativa</th>
+<th style="text-align: right;">F. Abs. Acum.</th>
+<th style="text-align: right;">F. Rel.Acum.</th>
+<th style="text-align: right;">Marca de clase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[-2.04,0.07)</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">-1.055</td>
+</tr>
+<tr class="even">
+<td>[ 0.07,2.18)</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8%</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">1.125</td>
+</tr>
+<tr class="odd">
+<td>[ 2.18,4.29)</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16%</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">36%</td>
+<td style="text-align: right;">3.235</td>
+</tr>
+<tr class="even">
+<td>[ 4.29,6.40)</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">24%</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">60%</td>
+<td style="text-align: right;">5.345</td>
+</tr>
+<tr class="odd">
+<td>[ 6.40,8.51)</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">28%</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">88%</td>
+<td style="text-align: right;">7.455</td>
+</tr>
+<tr class="even">
+<td>[ 8.51,10.62]</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">9.565</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section" class="slide level2 smaller center">
+<h2></h2>
+<p>La media es:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar{y} \approx \sum_{i=1}^p f_i y_i &amp;= 0.12 \times -1.055  + 0.08 \times 1.125 + 0.16 \times 3.235 +\\
+&amp;  0.24 \times 5.345 + 0.28 \times 7.455+ 0.12 \times 9.565  = 4.99
+\end{aligned}
+\]</span> La mediana es:</p>
+<p><span class="math display">\[\begin{aligned} P_{50} &amp;= l_{k-1}+w \left( \frac{0.5n-N_{k-1}}{n_k}\right)\\&amp;=4.29+2.11 \left(\frac{0.5(25)-9}{6} \right)= 5.52
+\end{aligned}\]</span></p>
+<p>La moda es:</p>
+<p><span class="math display">\[\begin{aligned}
+M_d(x) &amp;= l_{k-1} + w\left( \frac{n_k-n_{k-1}}{2n_k-n_{k-1}-n_{k+1}}\right) \\ &amp;= 6.40 + 2.11\left( \frac{7-6}{2\times7-6-3}\right)=6.82
+\end{aligned}\]</span></p>
+</section></section>
+<section id="medidas-de-localización" class="title-slide slide level1 center">
+<h1>Medidas de localización</h1>
+<p>Las medidas de localización o cuantiles, son valores que delimitan superiormente un determinado porcentaje de los datos observados.</p>
+</section>
+
+<section>
+<section id="medidas-de-localización-1" class="title-slide slide level1 center">
+<h1>Medidas de localización</h1>
+<p>El cuantil t de un conjunto de datos, denotado con <span class="math inline">\(P_t\)</span>, se define como un valor tal que t% de los datos es menor o igual que dicho valor. Estos particionan los datos en tantas partes como se deseen, en el caso de los cuartiles en 4, de los quintiles en 5, deciles en 10 y percentiles en 100.</p>
+<p>Como casos particulares se tienen los cuartiles (percentiles 25, 50 y 75; la mediana es el percentil 50 o cuartil 2).</p>
+</section>
+<section id="pasos-para-construir-cuantiles" class="slide level2 smaller center">
+<h2>Pasos para construir cuantiles</h2>
+<ol type="1">
+<li class="fragment"><strong>Ordena los datos:</strong> Primero, se ordenan los datos de menor a mayor.</li>
+<li class="fragment"><strong>Calcula el índice del cuantil:</strong> Se utiliza la siguiente expresión donde (n) es el número total de datos y (p) es el percentil deseado. El cuantil deseado siempre es mejor hallarlo en términos de percentiles por facilidad numérica.</li>
+</ol>
+<div class="fragment">
+<p><span class="math display">\[P=\frac{p \times n}{100}\]</span></p>
+<ol start="3" type="1">
+<li class="fragment"><p><strong>Identifica el valor del cuantil:</strong> Encuentra el valorcorrespondiente al índice calculado en el paso anterior en tuconjunto de datos ordenado. Si es entero el índice, ese será el valor del percentil. Si no es entero, use la siguiente expresión:</p>
+<p><span class="math display">\[P_k=(1-d)x_{[P]} + dx_{[P]+1}\]</span></p></li>
+</ol>
+</div>
+<div class="fragment">
+<p>donde d es la parte decimal del índice obtenido en el paso anterior.</p>
+</div>
+</section>
+<section id="ejemplo-6-1" class="slide level2 center">
+<h2>Ejemplo 6</h2>
+<p>Siguiendo con nuestro ejemplo anterior, los cuartiles para estos datos son:</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">quantile</span>(x, <span class="at">type =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     0%     25%     50%     75%    100% 
+-2.3800 -1.3925 -0.6050  0.4675  1.9600 </code></pre>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="medidas-de-dispersión-o-variabilidad" class="title-slide slide level1 center">
+<h1>Medidas de dispersión o variabilidad</h1>
+<p>Las medidas de dispersión indican cuán dispersos están los datos, es decir, qué tanto se estira o comprime la distribución.</p>
+</section>
+<section id="rango" class="slide level2 center">
+<h2>Rango</h2>
+<p>El rango es la diferencia entre el valor máximo y el valor mínimo en un conjunto de datos y está asociado con la amplitud de los mismos. Se calcula como:</p>
+<div class="fragment">
+<p><span class="math display">\[R = x_{max}-x_{min}\]</span></p>
+</div>
+</section>
+<section id="características" class="slide level2 center">
+<h2>Características</h2>
+<ul>
+<li class="fragment">Está dado en las mismas unidades de la variable de estudio.</li>
+<li class="fragment">Es sensible a valores extremos.</li>
+<li class="fragment">No da razón de la dispersión de los datos respecto a un valor particular o a una medida de tendencia central.</li>
+</ul>
+</section>
+<section id="rango-intercuartílico" class="slide level2 center">
+<h2>Rango intercuartílico</h2>
+<p>El rango intercuartílico del conjunto de datos, denotado con RI, se calcula como la diferencia entre el tercer y primer cuartil del conjunto de datos. Es decir: <span class="math display">\[RI = Q_3 - Q_2\]</span> donde <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_3\)</span> son respectivamente el primer y tercer cuartil de las n observaciones.</p>
+<p>En el rango intercuartílico se concentran el 50% central de las observaciones.</p>
+</section>
+<section id="características-1" class="slide level2 center">
+<h2>Características</h2>
+<ul>
+<li class="fragment">Está dado en las mismas unidades de la variable de estudio.</li>
+<li class="fragment">Es una medida robusta (poco influenciable) a valores extremos.</li>
+<li class="fragment">No da razón de la dispersión de los datos respecto a un valor particular o a una medida de tendencia central.</li>
+</ul>
+</section>
+<section id="ejemplo-6-2" class="slide level2 center">
+<h2>Ejemplo 6</h2>
+<p>Para nuestro conjunto de datos, el rango y el rango intercuartílico son:</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="do">## Rango</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>x <span class="sc">|&gt;</span> <span class="fu">range</span>() <span class="sc">|&gt;</span> <span class="fu">diff</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.34</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="do">## Rango Intercuartílico</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">IQR</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.88</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="varianza" class="slide level2 center">
+<h2>Varianza</h2>
+<p>Definimos la <strong>varianza muestral</strong> de una variable X como:</p>
+<p><span class="math display">\[S^2 = \frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n-1}\]</span></p>
+<p>y la <strong>varianza poblacional</strong> como:</p>
+<p><span class="math display">\[S^2 = \frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n}\]</span></p>
+<p>Esta medida nos indica qué tan dispersos están los datos con respecto a su media.</p>
+</section>
+<section id="desviación-estándar" class="slide level2 center">
+<h2>Desviación Estándar</h2>
+<p>Definimos la <strong>desviación estándar muestral</strong> de una variable X como:</p>
+<p><span class="math display">\[S^2 = \sqrt{\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n-1}}\]</span> y la <strong>desviación estándar poblacional</strong> como:</p>
+<p><span class="math display">\[S^2 = \sqrt{\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n}}\]</span></p>
+</section>
+<section id="desviación-estándar-1" class="slide level2 center">
+<h2>Desviación Estándar</h2>
+<p>Esta medida también nos indica qué tan dispersos están los datos con respecto a su media, pero tiene la ventaja que su unidad es la misma que la de los datos y su interpretación es más sencilla.</p>
+</section>
+<section id="desviación-estándar-2" class="slide level2 center">
+<h2>Desviación Estándar</h2>
+<p>Comparemos el comportamiento de una distribución con diferente medias y varianzas.</p>
+<p align="center">
+<img data-src="Normal_distribution.png" height="350">
+</p>
+</section>
+<section id="ejemplo-6-3" class="slide level2 center">
+<h2>Ejemplo 6</h2>
+<p>Para nuestro conjunto de datos la varianza muestral y la varianza poblacional son respectivamente:</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">var</span>(x) <span class="co"># Muestral</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.069203</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">VarN</span>(x) <span class="co"># Poblacional</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.839291</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Para nuestro conjunto de datos la desviación estándar muestral y la desviación estándar poblacional son respectivamente:</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">sd</span>(x) <span class="co"># Muestral</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.438472</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">SDN</span>(x) <span class="co"># Poblacional</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.356205</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="coeficiente-de-variación" class="slide level2 center">
+<h2>Coeficiente de Variación</h2>
+<p>El coeficiente de variación de Pearson de un conjunto de datos, denotado con <span class="math inline">\(CV(x)\)</span>, se calcula como:</p>
+<div class="fragment">
+<p><span class="math display">\[CV=\left|\frac{s}{\bar{x}} \right|\]</span></p>
+</div>
+<div class="fragment">
+<p>donde <span class="math inline">\(|a|\)</span> es el valor absoluto de a.</p>
+</div>
+</section>
+<section id="características-2" class="slide level2 smaller center">
+<h2>Características</h2>
+<ul>
+<li class="fragment">Compara la magnitud de la dispersión de la variable con la media del conjunto de datos, de tal forma que la maginitud es relativa al valor del promedio.</li>
+<li class="fragment">Las unidades del numerador y del denominador se cancelan y en consecuencia el coeficiente de variación es una medida adimensional.</li>
+<li class="fragment">A pesar de no ser una proporción, se acostumbra expresar el coeficiente en porcentaje.</li>
+</ul>
+<div class="fragment">
+<p>Su interpretación es la siguiente:</p>
+<ol type="1">
+<li class="fragment">Está entre 0% y 5%, entonces la dispersión del conjunto de datos es mínima.</li>
+<li class="fragment">Está entre 5% y 15%, entonces la dispersión del conjunto de datos es moderada.</li>
+<li class="fragment">Es superior a 15%, entonces la dispersión del conjunto de datos es alta.</li>
+</ol>
+</div>
+</section>
+<section id="ejemplo-6-4" class="slide level2 center">
+<h2>Ejemplo 6</h2>
+<p>El coeficiente de variación (muestral) correspondiente a nuestros datos de ejemplo es:</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="do">## Coeficiente de variación</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">abs</span>(<span class="fu">CoefVar</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.653385</code></pre>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="medidas-de-forma" class="title-slide slide level1 center">
+<h1>Medidas de forma</h1>
+<p>La forma de la distribución describe cómo se distribuyen los datos en relación con la medida central.</p>
+</section>
+<section id="asimetría" class="slide level2 center">
+<h2>Asimetría</h2>
+<p>Una distribución simétrica tiene valores equidistantes de la media a ambos lados. El coeficiente de asimetría mide el grado “asimetría” de la distribución con respecto a la media. Se calcula como:</p>
+<p><span class="math display">\[A = \frac{1}{n} \sum\left( \frac{x_i - \bar{x}}{s}\right)^3\]</span> Si la simetría es cercana a 0, la distribución es simétrica.</p>
+</section>
+<section id="asimetría-1" class="slide level2 center">
+<h2>Asimetría</h2>
+<p><img data-src="estadistica-tipos-de-asimetria.png" height="400"></p>
+</section>
+<section id="kurtosis" class="slide level2 center">
+<h2>Kurtosis</h2>
+<p>Indica que tan apuntada o achatada es una distribución. Se calcula como:</p>
+<p><span class="math display">\[K(x) = \frac{\sum_{i=1}^n (x_i-\bar{x})^4}{n S⁴}-3\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="curtosis.jpg" height="300"></p>
+<figcaption>curtosis</figcaption>
+</figure>
+</div>
+</section>
+<section id="ejemplo-6-5" class="slide level2 center">
+<h2>Ejemplo 6</h2>
+<p>Siguiendo con nuestro conjunto de datos de ejemplo tenemos que su asimetría y su curtosis muestrales son:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="do">## Asimetría</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">Skew</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2369175</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="do">## Curtosis</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">Kurt</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.421308</code></pre>
+</div>
+</div>
+</section></section>
+<section id="datos-atípicos" class="title-slide slide level1 center">
+<h1>Datos atípicos</h1>
+<p>Es muy frecuente que nuestro conjunto de datos presente observaciones que son heterogéneas con el resto, posiblemente porque se observaron en circunstancias distintas o por algún error de medición. Estas observaciones son llamadas <strong>datos atípicos</strong>.</p>
+<p>Se deben detectar puesto que depediendo de su presencia puede variar nuestro análisis para no incurrir en sesgos o conluciones erronéas. Los análisis efactuados revelan que frecuentemente entre el 1% y el 3% de los datos son atípicos, y cuando los datos se recolextaron sin el debido cuidado aumenta a 5%.</p>
+</section>
+
+<section id="gráfico-de-caja-y-bigotes" class="title-slide slide level1 center">
+<h1>Gráfico de caja y bigotes</h1>
+<p><img data-src="cajas_bigotes.jpg" height="500"></p>
+</section>
+
+<section id="ejemplo-4-2" class="title-slide slide level1 center">
+<h1>Ejemplo 4</h1>
+
+<img data-src="2_descriptiva_univariada_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+
+<section id="referencias" class="title-slide slide level1 center">
+<h1>Referencias</h1>
+<p>-Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].</p>
+<p>-Peña, D. (2014). Fundamentos de estadística. Alianza editorial.</p>
+<p>-Buitrago, L., &amp; Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558</p>
+
+<img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="2_descriptiva_univariada_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

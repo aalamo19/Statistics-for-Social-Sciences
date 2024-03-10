@@ -1,0 +1,8 @@
+- source: 3. Descriptiva Bivariada.qmd
+  quarto-pub:
+    - id: 3ebde347-8459-44e0-ab9d-bf913b40fcc6
+      url: 'https://aalamo.quarto.pub/estadística-descriptiva-bivarada'
+    - id: a6e54e11-8645-446c-b5b9-4d853e3c0bdf
+      url: 'https://aalamo.quarto.pub/descriptiva-bivariada-v2'
+    - id: c7f247e7-c70b-4b73-bc6d-9035ecb5a57a
+      url: 'https://aalamo.quarto.pub/descriptiva-bivariada'

@@ -1,0 +1,180 @@
+---
+title: "Introducción a la estadística"
+author: "Andreina Alamo"
+format:
+  revealjs:
+    theme: serif
+    center: true
+    logo: logo.png
+    css: logo.css
+    incremental: true 
+---
+
+
+# Proceso de investigación{.center}
+
+---------------------------------------
+
+-   Pregunta de investigación
+-   Objetivos e hipótesis de investigación
+-   Metodología
+-   Análisis de datos
+-   Resultados
+-   Conclusiones
+
+## Preguntas de investigación{.center}
+
+Una investigación suele inciarse con un interrogante como:
+
+- ¿Cuál es la relación entre la inteligencia y la genética de una persona?
+- ¿Qué diferencias existen entre dos tratamientos para el dolor articular?
+- ¿Que ocurriría si aumento la temperatura de cierta sustancia química?
+
+. . .
+
+Para plantear el problema se debe determinar la población en cuestión y las variables disponibles.
+
+## Objetivos e hipótesis de investigación{.center}
+
+- Los objetivos hacen referencia a lo que se quiere lograr con la investigación.
+
+- Una hipótesis es una conjetura o afirmación que se puede demostrar o refutar.
+
+. . .
+
+En los estudios se demuestran o refutan hipótesis, aunque en ocasiones pueden ser un aporte al problema, más no se obtiene una conclusión definitiva sobre la hipótesis.
+ 
+---------------- 
+
+## {.center}
+
+¿Cuáles de las siguientes son hipótesis?
+
+- La estatura de una persona está relacionada con su peso
+- La luna es de queso
+- ¿Ana se siente bien?
+- La sal es dulce
+
+## Metodología{.center}
+
+Nos refeririemos por metodología al modelo estadístico dado por la información y al mecanismo de recolección o generación de datos.
+
+- Algunos modelos estadísticos: univariados, multivariados, estáticos, dinámicos, etc.
+
+- Recolección de datos: se puede hacer mediante muestreo o diseño de experimentos.
+
+
+## Análisis de datos{.center}
+
+Dependiendo del modelo estadístico existen diversas técnicas que ayudarán a contrastar la hipótesis. Algunas de estas técnicas se verán más adelante.
+
+## Resultados y conclusiones{.center}
+
+Se presenta lo obtenido en el análisis y se establecen los hallazgos obtenidos a partir de estos.
+
+------------------------------------------------------------------------
+
+# ¿Qué es la estadística?{.center}
+
+Proviene de latín _statisticus_ que está compuesto por _status_ (estado) e _icus_ (ico: relativo a).
+
+Es la ciencia que se ocupa de los métodos y las técnicas para recoger, clasificar, resumir y analizar conjuntos de datos; así como de realizar inferencias a partir de ellos, con el fin de tomar decisiones racionales en situaciones que impliquen incerteza.
+
+La **incertidumbre** es un estado de información incompleta sobre algo de interés.
+
+## Algunos problemas que resuelve la estadística{.center}
+
+-   Descripción de datos
+-   Análisis de muestras
+-   Contrastación de hipótesis
+-   Medición de relaciones
+-   Predicción
+
+## Clasificación de la estadística{.center}
+
+La **estadística descriptiva** describe y representa un grupo de datos utilizando métodos numéricos y gráficos que resumen la información contenida en ellos.
+
+La **estadística inferencial** a partir de un conjunto de datos menor (muestra) permite efectuar estimaciones, predicciones u otras generalizaciones sobre un conjunto de datos mayor (población), apoyándose en el cálculo de probabilidades.
+
+## Historia de la estadística de la estadística
+
+- **2000 a.c.:** Los griegos realizaban censos para recopilar información y cobrar impuestos.
+- **Siglo XIX:** Francis Galton introduce conceptos de correlación y regresión.
+- **1901:** Karl Pearson, Francis Galton y Walter Weldon fundan Biometrika.
+- **1908:** William Gosset describe la distribución "t de Student".
+
+------------
+
+- **1933:** Jerzy Neyman y Egon Pearson desarrollan conceptos de prueba de hipótesis.
+- **1935:** Sir Ronald Fisher publica "The Design of Experiments".
+- **1950s:** Desarrollo de técnicas de muestreo y encuestas para recopilar datos.
+- **1993:** Creación del software R.
+
+# Variables{.center}
+
+Las características de interés en una investigación reciben el nombre de variables y se caracterizan por ser observables o medibles. Algunos ejemplos son:
+
+- Ventas de una empresa
+- Lugar de nacimiento de un individuo
+- Densidad de algún elemento
+- Nota definitiva de alguna asignatura
+
+. . .
+
+Las variables pueden ser **cuantitativas** o **cualitativas**. 
+
+## Variables cuantitativas{.center}
+
+Las variables cuantitativas son aquellas que se representan de forma numérica. Estas se clasifican en:
+
+- **Discretas:** Existe una cantidad finita o infinita numerable de valores de la variable. Por ejemplo: número de hijos o edad en años.
+
+- **Continuas:** existe una cantidad infinita no numerable de valores de la variable entre dos posibles valores cualesquiera de la misma. Por ejemplo: temperatura o salario.
+
+## Variables cualitativas{.center}
+
+Son aquellas que no se pueden medir numéricamente tales como nacionalidad, color de la piel, sexo, etc. Se clasifican en:
+
+- **Nominales:** no admiten una ordenación, como por ejemplo sexo o sabor de helado.
+
+- **Ordinales:** Admiten ordenación. Por ejemplo, el nivel de educación o estrato.
+
+## Escalas de Medida{.center}
+
+Para una variable cuantitativa tenemos las siguientes escalas de medida:
+
+- **De intervalo:** son aquellas que pueden tomar cualquier valor real dentro de un intervalo cuando el cero
+no necesariamente tiene sentido. Como ejemplo tenemos: temperatura y hora.
+
+- **De razón:** son aquellas que pueden tomar cualquier valor real dentro de un intervalo cuando el cero
+tiene sentido. En esta escala tenemos: el peso de una persona o cantidad de libros en una repisa.
+
+## ¿Como clasificaría estas variables?{.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Edad de los estudiantes <span style="color:blue;"> cuantitativa discreta de razón</span>
+- Nivel educativo <span style="color:blue;"> cualitativa ordinal</span>
+- Color de ojos<span style="color:blue;"> cualitativa nominal</span>
+- Altura de los árboles<span style="color:blue;"> cuantitativa continua de razón</span>
+- Grado de satisfacción (en una escala del 1 al 5) <span style="color:blue;"> cualitativa ordinal</span>
+:::
+
+::: {.column width="50%"}
+- Número de hermanos <span style="color:blue;"> cuantitativa discreta de razón</span>
+- Marca de teléfono móvil <span style="color:blue;"> cualitativa nominal</span>
+- Salario mensual <span style="color:blue;"> cuantitativa continua de razón</span>
+- Estado civil <span style="color:blue;"> cualitativa nominal</span>
+- Peso de los paquetes de harina en una panadería <span style="color:blue;"> cuantitativa continua de razón</span>
+:::
+
+::::
+
+# Referencias{.center}
+
+-Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
+
+-Peña, D. (2014). Fundamentos de estadística. Alianza editorial.
+
+-Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558

@@ -1,0 +1,557 @@
+---
+title: "Estadística Descriptiva Bivarada"
+author: "Andreina Alamo"
+format:
+  revealjs:
+    theme: serif
+    center: true
+    logo: logo.png
+    css: logo.css
+    incremental: true 
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Introducción
+
+En el capítulo anterior vimos que existen dos tipos de variables: cualitativas y cuantitativas. Ahora, cuando analizamos **2 variables** tenemos los siguientes posibles cruces:
+
+- Cualitativa - Cualitativa.
+- Cuantitativa - Cuantitativa.
+- Cualitativa - Cuantitativa.
+
+. . . 
+
+Cuando se analizan dos variables en conjunto este se denomina **bivariado**, y consiste en identificar patrones, nexos o asociaciones entre las dos variables del estudio.
+
+## Caso Cualitativa - Cualitativa
+
+En este escenario se dispone de un conjunto de $n$ individuos, cada uno de ellos observado en dos atributos que en adelante se representan mediante $X$ y $Y$. Se supone que la variable $X$ tiene $k$ categorías, es decir, $X$ asume los valores $x_1,x_2,…,x_k$, y que la variable Y tiene p categorías, es decir, Y asume los valores $y_1,y_2,…,y_p$.
+
+## Frecuencia absoluta conjunta{.smaller}
+
+La **frecuencia absoluta conjunta** de la clase $C_{i j}$, denotada con $n_{i j}$, es la cantidad de observaciones que hacen parte de la $i$-ésima fila y la $j$ -ésima columna para $i=1, \ldots, k$ y $j=1, \ldots, p$.
+
+|$X / Y$  | $y_1$         | $y_2$         | $\cdots$ | $y_j$      | $\cdots$   | $y_p$      | Total      |
+|--------:|--------------:|--------------:|---------:|-----------:|-----------:|-----------:|-----------:|
+|$x_1$    | $n_{11}$      | $n_{12}$      | $\cdots$ | $n_{1 j}$  | $\cdots$ | $n_{1 p}$    | $n_{1 .}$  |
+|$x_2$    | $n_{21}$      | $n_{22}$      | $\cdots$ | $n_{2 j}$  | $\cdots$ | $n_{2 p}$    | $n_{2 .}$  |
+|$\vdots$ | $\vdots$      | $\vdots$      | $\ddots$ | $\vdots$   | $\ddots$ | $\vdots$     | $\vdots$   | 
+|$x_i$    | $n_{i 1}$     | $n_{i 2}$     | $\cdots$ | $n_{i j}$  | $\cdots$ | $n_{i p}$    |$n_{i \cdot}$|
+|$\vdots$ | $\vdots$      | $\vdots$      | $\ddots$ | $\vdots$   | $\ddots$ | $\vdots$     | $\vdots$    |
+|$x_k$    | $n_{k 1}$     | $n_{k 2}$     | $\cdots$ | $n_{k j}$  | $\cdots$ | $n_{k p}$    |$n_{k \cdot}$|
+|Total    | $n_{\cdot 1}$ | $n_{\cdot 2}$ | $\cdots$ |$n_{\cdot j}$| $\cdots$| $n_{\cdot p}$| $n$         |
+
+## Frecuencia relativa conjunta{.smaller}
+
+La **frecuencia relativa conjunta** de la clase $C_{i j}$, denotada con $fr_{i j}$, es la proporción de la frecuencia absoluta conjunta de la $i j$-ésima categoría respecto a la cantidad total de observaciones, esto es: $fr_{i j}=\frac{n_{i j}}{n}$
+para $i=1, \ldots, k$ y $j=1, \ldots, p$.
+
+|$X / Y$  | $y_1$         | $y_2$         | $\cdots$ | $y_j$      | $\cdots$ | $y_p$      | Total      |
+|--------:|--------------:|--------------:|---------:|-----------:|---------:|-----------:|-----------:|
+|$x_1$    | $fr_{11}$     | $fr_{12}$     | $\cdots$ | $fr_{1 j}$ | $\cdots$ | $fr_{1 p}$ | $fr_{1 \bullet}$|
+|$x_2$    | $fr_{21}$     | $fr_{22}$     | $\cdots$ | $fr_{2 j}$ | $\cdots$ | $fr_{2 p}$ | $fr_{2 \bullet}$|
+|$\vdots$ | $\vdots$      | $\vdots$      | $\ddots$ | $\vdots$   | $\ddots$ | $\vdots$   | $\vdots$   | 
+|$x_i$    | $fr_{i 1}$    | $fr_{i 2}$    | $\cdots$ | $fr_{i j}$ | $\cdots$ | $fr_{i p}$ |$fr_{i \bullet}$|
+|$\vdots$ | $\vdots$      | $\vdots$      | $\ddots$ | $\vdots$   | $\ddots$ | $\vdots$   | $\vdots$   |
+|$x_k$    | $fr_{k 1}$    | $fr_{k 2}$    | $\cdots$ | $fr_{k j}$ | $\cdots$ | $fr_{k p}$ |$fr_{k \bullet}$|
+|Total    |$fr_{\bullet 1}$|$fr_{\bullet 2}$|$\cdots$|$fr_{\bullet j}$|$\cdots$|$fr_{\bullet p}$|$1$   |
+
+
+La **frecuencia absoluta marginal** de la fila $i$, denotada con $n_{i \bullet}$, es el total de observaciones de la $i$-ésima categoría de la variable de las filas para $i=1, \ldots, k$.
+
+## {.smaller}
+
+Así mismo, la **frecuencia absoluta marginal de la columna** $j$, denotada con $n_{\bullet j}$, es el total de observaciones de la $j$-ésima categoría de la variable de las columnas para $j=1, \ldots, p$.
+
+A partir de la definición se tiene que:
+
+$$
+n_{i \bullet}=n_{i 1}+n_{i 2}+\ldots+n_{i p}=\sum_{j=1}^p n_{i j} \quad \text { para } i=1, \ldots, k,
+$$
+y además,
+$$
+n_{\bullet j}=n_{1 j}+n_{2 j}+\ldots+n_{k j}=\sum_{i=1}^k n_{i j} \quad \text { para } j=1, \ldots, p .
+$$
+
+Las **frecuencias relativas marginales** se definen análogamente.
+
+## Ejemplo 
+
+La siguiente tabla corresponde a una tabla de contingencia en la que se estudia la variable sexo ($X$) y nivel educativo ($Y$) de una muestra de personas. Obtener las frecuencias relativas conjuntas y marginales correspondientes.
+
+|X/Y    |Bachillerato |	Pregrado|	Posgrado|	
+|-------|------------:|--------:|--------:|
+|Hombre	|$4$         |$9$      |	    $12$|	 
+|Mujer	|$12$	        |$7$      |	     $2$|
+
+- Halle $k$,$p$,$n$,$n_{1\bullet}$,$n_{2\bullet}$,$n_{\bullet 1}$,$n_{\bullet 2}$ y $n_{\bullet 3}$. 
+- Cálcule la tabla de frecuencias relativas con sus respectivas frecuencias relativas marginales.
+
+## Solución{.smaller}
+
+$k=2, p=3, n_{1 \bullet} =25, n_{2 \bullet}=21, n_{\bullet}=16, n_{\bullet}=16, n_{\bullet}=14 \quad \text { y } \quad n=46$
+
+. . . 
+
+La tabla de frecuencias relatrivas es:
+
+| $X / Y$ | Bachillerato | Pregrado | Posgrado | Total |
+| -------| ----: | ----: | ----: | ----: |
+| Hombre | $8.7 \%$ | $19.6 \%$ | $26.1 \%$ | $54.3 \%$ |
+| Mujer | $26.1 \%$ | $15.2 \%$ | $4.3 \%$ | $45.7 \%$ |
+| Total | $34.8 \%$ | $34.8 \%$ | $30.4 \%$ | $100.0 \%$ |
+
+## Perfiles{.smaller}
+
+Los **perfiles fila** están asociados con una tabla de doble entrada en la que se calculan las frecuencias relativas conjuntas respecto a los totales de las filas correspondientes.
+
+Análogamente, se definen los **perfiles columna**.
+
+A partir de la definición, se tiene que la frecuencia relativa de la $i j$-ésima categoría de una tabla de perfiles fila, denotada con $h_{i j \mid \bullet}$, está dada por:
+$$
+h_{i j \mid i \bullet}=\frac{n_{i j}}{n_{i \bullet}},
+$$
+mientras que la frecuencia relativa de la $i j$-ésima categoría de una tabla de perfiles columna, denotada con $h_{i j} \bullet j$, se está dada por:
+$$
+h_{i j \mid \bullet j}=\frac{n_{i j}}{n_{\bullet j}}
+$$
+
+para $i=1, \ldots, k$ y $j=1, \ldots, p$.
+
+## Ejemplo 
+
+Siguiendo con nuestro ejemplo anterior se tienen las siguientes tablas:
+
+Perfiles fila:
+
+| $X / Y$ | Bachillerato | Pregrado | Posgrado | Total |
+| --------| ----: | ----: | ----: | ----: |
+| Hombre | $16.0 \%$ | $36.0 \%$ | $48.0 \%$ | $100.0 \%$ |
+| Mujer | $57.1 \%$ | $33.3 \%$ | $9.5 \%$ | $100.0 \%$ |
+| Total | $34.8 \%$ | $34.8 \%$ | $30.4 \%$ | $100.0 \%$ |
+
+------------------------
+
+Perfiles columna:
+
+| $X / Y$ | Bachillerato | Pregrado | Posgrado |  |
+| ------- | ----: | ----: | ----: | ----: |
+| Hombre | $25.0 \%$ | $56.3 \%$ | $85.7 \%$ | $54.3 \%$ |
+| Mujer | $75.0 \%$ | $43.8 \%$ | $14.3 \%$ | $45.7 \%$ |
+| Total | $100.0 \%$ | $100.0 \%$ | $100.0 \%$ | $100.0 \%$ |
+
+## 
+
+Cuando se trabaja con dos variables cuantitativas, es costumbre denominar a la variable $X$ representada en el eje $x$ variable independiente y a la variable $Y$ representada en el eje $y$ variable dependiente.
+
+Es costumbre mostrar las observaciones de una muestra correspondiente a un conjunto de datos bivariado como sigue.
+\begin{tabular}{ccc}
+$X$ & $Y$ & $y_1$ \\
+\hline$x_1$ & $y_1$ & $\vdots$ \\
+\hline$x_1$ & $\vdots$ & $y_n$
+\end{tabular}
+
+## Gráficos para 2 varaibles cualitativas
+
+```{r perfiles fila}
+# datos
+library(viridis)
+tabla <- rbind(c(4, 9, 12), c(12, 7, 2))
+rownames(tabla) <- c("Hombre","Mujer")
+colnames(tabla) <- c("Bachillerato","Pregrado","Posgrado")
+# perfiles fila
+# perfiles fila
+pf <- 100*prop.table(x = tabla, margin = 1)
+# perfiles columna
+pc <-100*prop.table(x = tabla, margin = 2)
+# diagrama de barras perfiles fila
+par(bg = "transparent")
+barplot(height = t(pf), ylim = c(0,120), legend.text = TRUE, 
+        args.legend = list(x = "top", bty = "n", ncol = 3), col=viridis(3),
+        main = "Perfil fila", xlab = "Sexo", ylab = "Porcentaje (%)")
+# diagrama de barras perfiles columna
+
+
+```
+
+## 
+```{r perfiles columna}
+par(bg = "transparent")
+barplot(height = pc, beside = FALSE, las = 1, ylim = c(0, 120), col=viridis(3)[c(2,1)],
+        legend.text = TRUE, args.legend = list(x = "top", bty = "n", ncol = 2), 
+        main = "Perfil columna", xlab = "Nivel educativo", ylab = "Porcentaje (%)")
+```
+
+## 
+
+Cuando se trabaja con dos variables cuantitativas, es costumbre denominar a la variable $X$ representada en el eje $x$ variable independiente y a la variable $Y$ representada en el eje $y$ variable dependiente.
+
+Es costumbre mostrar las observaciones de una muestra correspondiente a un conjunto de datos bivariado como sigue.
+
+|$X$ | $Y$ | 
+|-----:|------:|
+|$x_1$ | $y_1$ |
+|$x_2$ |$y_2$| 
+|$\vdots$ |$\vdots$| 
+|$x_n$ |$y_n$| 
+
+
+
+# Caso Cuantitativa - Cuantitativa
+
+
+En este escenario se dispone de un conjunto de $n$ individuos, en cada uno de ellos se observan dos variables cuantitativas que en adelante se representan mediante $X$ y $Y$.
+
+. . .
+
+En este caso, es bueno iniciar el análisis realizando un **gráfico de dispersión**, es decir, un gráfico de puntos tal que cada eje (vertical y horizontal) corresponde a una de las dos variables en estudio.
+
+----
+
+```{r,echo = F, eval = T}
+library(MASS)
+data(Cars93)
+
+par(bg = "transparent")
+with(Cars93,plot(EngineSize,Price,
+                 xlab = "Tamaño del motor (Litros)",
+                 ylab = "Precio (Miles de dólares)",
+                 pch = 20))
+grid()
+```
+
+##
+
+En este gráfico se puede identificar si existe algún tipo de relación o (asociación) entre las dos variables y de qué tipo es. 
+
+. . .
+
+Si al realizar el gráfico de dispersión los puntos no siguen ningún patrón, se toma como un indicio de que las variables son **independientes**, es decir, no están **correlacionadas**. En otro caso, se dice que están **correlacionadas**.
+
+. . .
+
+La **correlación** entre las variables puede ser **lineal**, si los puntos siguen aproximadamente una recta, o **no lineal** en otro caso.
+
+---
+
+La siguiente imagen muestra los tipos de relaciones que pueden existir entre las variables:
+
+<p align="center">
+<img src="tipo_asociación.png" width="450">
+</p>
+
+## Covarianza
+
+Para medir el grado de asociación lineal entre dos variables, se utilizar una estadística cuya fórmula es similar a la de la varianza:
+
+$$
+    COV(x,y)=\frac{1}{n-1}\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})
+$$
+
+para el caso muestral. En el caso poblacional, se divide entre $n$ en vez de $n-1$.
+
+---
+
+- Si $COV(x,y) > 0$, entonces $y$ tiende a aumentar cuando lo hace $x$ (relación directa).
+- Si $COV(x,y) < 0$, entonces $y$ tiende a disminuir cuando lo hace $x$ (relación inversa).
+- Si $COV(x,y) \approx 0$, entonces los puntos se reparten "equitativamente" alrededor de $(\bar{x},\bar{y})$, es decir, no existe **asociación lineal** entre las variables.
+
+<!---
+
+---
+
+Una propiedad importante de la varianza y la covarianza es
+
+$$
+VAR(x+y) = VAR(x) + 2COV(x,y) + VAR(y)
+$$
+
+Note su similitud con 
+
+$$
+(a+b)^2 = a^2 + 2ab + b^2
+$$
+
+--->
+
+---
+
+La covarianza entre el tamaño del motor y el precio de los carros graficados anteriormente es:
+
+. . .
+
+```{r,echo = F, eval = T}
+
+with(Cars93,cov(Price,EngineSize))
+
+```
+
+Interprete este resultado.
+
+## Propiedades de la covarianza
+
+* $COV(x,y) = COV(y,x)$
+* $COV(a\ x,y) = a\ COV(x,y)$ con $a\in\mathbb{R}$.
+* $COV(a + x,y) = COV(x,y)$ con $a\in\mathbb{R}$.
+
+## Correlación de Pearson
+
+La **correlación de Pearson** se define como:
+
+$$
+COR(x,y) = \frac{COV(x,y)}{SD(x) \ SD(y)} = \frac{COV(x,y)}{\sqrt{VAR(x)}\sqrt{VAR(y)}}
+$$
+
+---
+
+
+Toma valores entre -1 y 1, y su interpretación es más rica que la de la covarianza:
+
+- Es igual a -1: Las dos variables están perfectamente asociadas de manera inversa, es decir, con total seguridad a medida que una aumenta, la otra disminuye.
+- Es cercana a -1: Las variables están asociadas de manera inversa.
+- Es cercana a 0: Las variables no presentan una asociación lineal considerable.
+
+---
+
+
+- Es cercana a 1: Las variables están asociadas de manera directa.
+- Es igual a 1: Las variables están perfectamente asociadas de manera directa, es decir, es decir, con total seguridad a medida que una aumenta, la otra también.
+
+---
+
+
+<p align="center">
+<img src="correlaciones.png" width="1100">
+</p>
+
+
+---
+
+La correlación (de Pearson) entre el tamaño del motor y el precio de los carros graficados anteriormente es:
+
+. . .
+
+```{r,echo = F, eval = T}
+
+with(Cars93,cor(Price,EngineSize))
+
+```
+
+Interprete este resultado.
+
+---
+
+¿Qué diferencias identifican entre la covarianza y la correlación?
+
+. . .
+
+. . .
+
+* Unidades
+* Límites
+
+## Correlación de Spearman
+
+La correlación se calcula a partir de la covarianza y las varianzas, y estas a su vez, a partir de la media. Por tanto, todas estas estadísticas son sensibles a datos atípicos. Spearman propone una manera de medir correlación basada en rangos que es robusta a datos atípicos:
+
+. . .
+
+Los rangos son simplemente el orden o *ranking* de menor a mayor que se asigna a un conjutno de datos. Por ejemplo:
+
+. . .
+
+Datos:
+
+```{r,echo = F,eval = T}
+
+set.seed(1)
+
+x <- runif(5)
+
+print(round(x,3))
+
+```
+
+. . .
+
+rangos:
+
+```{r}
+
+rank(x)
+
+```
+
+---
+
+La propuesta de Spearman es la siguiente:
+
+
+<p align="center">
+<img src="formula_spearman.png" width="800">
+</p>
+
+donde $D_i = R(X_i) - R(Y_i)$.
+
+---
+
+**Ejemplo:** Como parte de un estudio sobre el efecto de la presión del grupo sobre el conformismo individual en una situación que implica riesgo monetario, dos investigadores administraron la escala F, una medida de autoritarismo y una escala diseñada para medir estados de lucha social a 12 estudiantes.
+
+---
+
+<p align="center">
+<img src="datos_spearman.png" width="800">
+</p>
+
+---
+
+<p align="center">
+<img src="datos2_spearman.png" width="800">
+</p>
+
+---
+
+<p align="center">
+<img src="datos3_spearman.png" width="800">
+</p>
+
+---
+
+El coeficiente de correlación de Spearman toma valores entre -1 y 1. Si es cercano a 1, existe una asociación directa entre las dos variables, si es cercano a -1, es asociación inversa.
+
+Este coeficiente de correlación es capaz de identificar correlaciones no lineales **monótonas** de mejor manera que el de Pearson.
+
+---
+
+
+Por ejemplo, para estos datos:
+
+```{r,fig.height=6}
+
+set.seed(1)
+x <- runif(100,min = 0.01,max = 0.99)*pi-.5*pi
+y <- tan(x)+0.35*rnorm(100)
+
+par(bg = "transparent")
+plot(x,y,pch = 20)
+grid()
+```
+
+
+```{r}
+print("Pearson")
+cor(x,y,method = "pearson")
+print("Spearman")
+cor(x,y,method = "spearman")
+```
+
+---
+
+No obstante, cuando la tendencia no es monótona:
+
+```{r,fig.height=6}
+
+set.seed(1)
+x <- runif(100,min = -1,max = 1)
+y <- sqrt(1-x^2)+0.05*rnorm(100)
+par(bg = "transparent")
+plot(x,y,pch = 20)
+grid()
+```
+
+
+```{r}
+#| echo: true
+print("Pearson")
+cor(x,y,method = "pearson")
+print("Spearman")
+cor(x,y,method = "spearman")
+```
+
+## $\tau$ de Kendall
+
+Existe otra propuesta de coeficiente de correlación basada en comparaciones pareadas de los $n$ individuos. Sean $(x_i,y_i)$ las observados en el $i$-ésimo individuo de las variables $X$ y $Y$, respectivamente. 
+
+. . .
+
+Se empareja cada individuo $i$ con todos los demás $j$ y en cada caso, se evalúa si son concordantes o discordantes. Son concordantes si $x_i<x_j$ y $y_i<y_j$, o si $x_i>x_j$ y $y_i>y_j$. Son discordantes si $x_i<x_j$ y $y_i>y_j$, o si $x_i>x_j$ y $y_i<y_j$.
+
+---
+
+Finalmente se calcula el coeficiente $\tau$ de Kendall como
+
+$$
+T = \frac{\#pares\ concordante - \#pares\ discordantes}{total\ de\ pares} 
+$$
+
+$$
+= \frac{2(\#pares\ concordante - \#pares\ discordantes)}{N(N-1)}
+$$
+
+
+---
+
+El coeficiente de correlación $\tau$ de Kendall toma valores entre -1 y 1 y su interpretación es análoga a la del coeficiente de correlación de Pearson.
+
+. . .
+
+Note que este coeficiente se puede aplicar con variables de tipo ordinal, no necesariamente cuantitativas. Esa es su principal ventaja.
+
+---
+
+Suponga que se tienen los siguientes datos:
+
+```{r}
+n <- 5
+
+set.seed(1)
+x <- sample(1:100,n)
+y <- sample(1:100,n)
+
+dat <- cbind(x,y)
+
+rownames(dat) <- 1:n
+
+dat
+```
+
+Haga una tabla de $5\times 5$ que muestra si cada par es concordante o discordante.
+
+. . .
+
+```{r}
+
+comparaciones <- matrix("",n,n)
+for(i in 2:n){
+  for(j in 1:(i-1)){
+    comparaciones[i,j] <- ifelse(prod(dat[i,] - dat[j,]) > 0,"Con","Dis")
+  }
+}
+
+colnames(comparaciones) <- rownames(comparaciones) <- 1:n
+comparaciones
+```
+
+---
+
+A partir de la tabla, calcule el coeficiente de correlación $\tau$ de Kendall:
+
+* Número de concordantes: 3
+* Número de discordantes: 7
+* Total de pares: 10
+
+. . .
+
+$$
+T = \frac{3 - 7}{10} = -0,4
+$$
+
+# Referencias{.center}
+
+-Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
+
+-Peña, D. (2014). Fundamentos de estadística. Alianza editorial.
+
+-Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558

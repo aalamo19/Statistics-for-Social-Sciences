@@ -1,0 +1,14 @@
+- source: 2_descriptiva_univariada.qmd
+  quarto-pub:
+    - id: 14cf0bcc-0af2-4baa-ab9d-c0078c3e37e1
+      url: 'https://aalamo.quarto.pub/estadística-descriptiva-univarada'
+    - id: d7fc9996-9c8b-4b0f-9b8a-fab9a8c314b8
+      url: 'https://aalamo.quarto.pub/estadistica-descriptiva-univariada-14-febrero'
+    - id: 69acc765-2f41-4e3e-a890-f1e239ed7071
+      url: 'https://aalamo.quarto.pub/estadistica_descriptiva_univariada_vf'
+    - id: 713862b3-c6c8-4401-b39a-0dccb4e15e66
+      url: 'https://aalamo.quarto.pub/descrptiva-bivariada'
+    - id: 1e6f5712-966d-4bd1-bce5-4ec5cfedee81
+      url: 'https://aalamo.quarto.pub/estadística-descriptiva-univarada'
+    - id: e34a1142-bc52-4904-98bf-c593314e4c87
+      url: 'https://aalamo.quarto.pub/descriptiva-univariada'

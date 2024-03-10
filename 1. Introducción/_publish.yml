@@ -1,0 +1,6 @@
+- source: 1_introduccion.qmd
+  quarto-pub:
+    - id: 762ab46e-cb24-4426-b8d9-682b7923e043
+      url: 'https://aalamo.quarto.pub/introduccion-a-la-estadistica'
+    - id: 2e468a50-ce9f-4a14-9ac3-b3523a4df9c2
+      url: 'https://aalamo.quarto.pub/descriptiva-univariada'
