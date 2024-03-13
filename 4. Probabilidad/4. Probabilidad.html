@@ -779,15 +779,23 @@ P\left(F_1 \mid D\right) &amp; =\frac{P\left(F_1\right) P\left(D \mid F_1\right)
 </section>
 <section id="ejemplo-11" class="slide level2 smaller center">
 <h2>Ejemplo</h2>
-<p>Supongamos que un examen médico es positivo para una cierta enfermedad en el <span class="math inline">\(2\%\)</span> de los casos en los que una persona está realmente enferma, y en el <span class="math inline">\(10\%\)</span> de los casos en los que una persona está sana. Si sabemos que el <span class="math inline">\(1\%\)</span> de la población está realmente enferma, ¿cuál es la probabilidad de que una persona que tenga un resultado positivo en el examen realmente esté enferma?</p>
+<p>Supongamos que un examen médico es positivo para una cierta enfermedad en el <span class="math inline">\(92\%\)</span> de los casos en los que una persona está realmente enferma, y en el <span class="math inline">\(10\%\)</span> de los casos en los que una persona está sana. Si sabemos que el <span class="math inline">\(1\%\)</span> de la población está realmente enferma, ¿cuál es la probabilidad de que una persona que tenga un resultado positivo en el examen realmente esté enferma?</p>
 <p>De acuerdo con el teorema de Bayes, podemos calcular esta probabilidad como sigue:</p>
 <p><span class="math display">\[
 \begin{aligned}
 P(E \mid +) &amp; = \frac{P(E) P(+ \mid E)}{P(E) P(+ \mid E) + P(\neg E) P(+ \mid \neg E)} \\
-&amp; = \frac{0.01 \times 0.02}{0.01 \times 0.02 + 0.99 \times 0.10} \\
-&amp; = 0.016
+&amp; = \frac{0.01 \times 0.92}{0.01 \times 0.92 + 0.99 \times 0.10} \\
+&amp; = 0.085
 \end{aligned}
 \]</span></p>
+</section>
+<section id="ejercicio" class="slide level2 smaller center">
+<h2>Ejercicio</h2>
+<p>Una empresa elabora sus productos en dos fábricas. El porcentaje de producción total que se elabora en cada fábrica es del <span class="math inline">\(40\%, 10\%\)</span> y del <span class="math inline">\(50\%\)</span>. Además, el porcentaje de artículos defectuosos en cada fábrica es del <span class="math inline">\(1\%, 2\%\)</span> y <span class="math inline">\(4\%\)</span>, respectivamente.</p>
+<ol type="1">
+<li class="fragment"><p>Calcular la probabilidad de que un artículo que resulta estar en buen estado provenga de la primera fábrica.</p></li>
+<li class="fragment"><p>Calcular la probabilidad de que un artículo que resulta ser defectuoso provenga de la segunda fábrica.</p></li>
+</ol>
 
 <img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
