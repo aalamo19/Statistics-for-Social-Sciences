@@ -1,0 +1,6 @@
+- source: 4. Probabilidad.qmd
+  quarto-pub:
+    - id: 6fa3d6c7-b922-4fff-bdd4-6434ed48c841
+      url: 'https://aalamo.quarto.pub/probabilidad'
+    - id: 07929619-2a3d-463d-ab3b-a07f533d1350
+      url: 'https://aalamo.quarto.pub/esf-probabilidad-v2'

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="2. Probabilidad_files/libs/clipboard/clipboard.min.js"></script>
-<script src="2. Probabilidad_files/libs/quarto-html/tabby.min.js"></script>
-<script src="2. Probabilidad_files/libs/quarto-html/popper.min.js"></script>
-<script src="2. Probabilidad_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="2. Probabilidad_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="2. Probabilidad_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="2. Probabilidad_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="2. Probabilidad_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+<script src="4. Probabilidad_files/libs/clipboard/clipboard.min.js"></script>
+<script src="4. Probabilidad_files/libs/quarto-html/tabby.min.js"></script>
+<script src="4. Probabilidad_files/libs/quarto-html/popper.min.js"></script>
+<script src="4. Probabilidad_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="4. Probabilidad_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="4. Probabilidad_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="4. Probabilidad_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="4. Probabilidad_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Andreina Alamo">
   <title>Probabilidad</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="2. Probabilidad_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="2. Probabilidad_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="4. Probabilidad_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="4. Probabilidad_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,12 +30,12 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="2. Probabilidad_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="4. Probabilidad_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="logo.css">
-  <link href="2. Probabilidad_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="2. Probabilidad_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="2. Probabilidad_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="2. Probabilidad_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="4. Probabilidad_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="4. Probabilidad_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="4. Probabilidad_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="4. Probabilidad_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -370,6 +370,26 @@ Andreina Alamo
 <h2>Conteo</h2>
 <p>Dado que el cálculo de probabilidades implica contar en algunas situaciones prácticas, a continuación se presentan algunos principios del conteo. En particular vamos a contestar la siguiente pregunta: para <span class="math inline">\(k&lt;n\)</span>, ¿de cuántas formas se pueden seleccionar <span class="math inline">\(k\)</span> elementos de <span class="math inline">\(n\)</span> ?</p>
 </section>
+<section id="principio-aditivo-del-conteo" class="slide level2 center">
+<h2>Principio aditivo del conteo</h2>
+<p>Sean <span class="math inline">\(E_1, E_2, \ldots, E_m\)</span> conjuntos (procesos) que NO pueden ocurrir al mismo tiempo. Si:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(E_1\)</span> ocurre de <span class="math inline">\(n_1\)</span> formas</li>
+<li class="fragment"><span class="math inline">\(E_2\)</span> ocurre de <span class="math inline">\(n_2\)</span> formas</li>
+<li class="fragment"><span class="math inline">\(\vdots\)</span></li>
+<li class="fragment"><span class="math inline">\(E_m\)</span> ocurre de <span class="math inline">\(n_m\)</span> formas</li>
+</ul>
+<div class="fragment">
+<p>entonces, el número de formas en que puede ocurrir es <span class="math inline">\(\sum_{j=1}^m n_j = n_1 + n_2 + \cdots + n_m\)</span>.</p>
+</div>
+</section>
+<section id="ejemplo" class="slide level2 center">
+<h2>Ejemplo</h2>
+<p>¿De cuántas formas se puede cruzar un río una vez, si se cuenta con 1 bote y 2 barcos?</p>
+<div class="fragment">
+<p><span class="math display">\[1+2 = 3\]</span></p>
+</div>
+</section>
 <section id="principio-multiplicativo-del-conteo" class="slide level2 center">
 <h2>Principio multiplicativo del conteo</h2>
 <p>Sean <span class="math inline">\(E_1, E_2, \ldots, E_m\)</span> conjuntos (procesos). Si:</p>
@@ -380,10 +400,10 @@ Andreina Alamo
 <li class="fragment"><span class="math inline">\(E_m\)</span> ocurre de <span class="math inline">\(n_m\)</span> formas</li>
 </ul>
 <div class="fragment">
-<p>entonces, el número de formas en que puede ocurrir <span class="math inline">\(E_1 \cap E_2 \cap \ldots E_m\)</span> es <span class="math inline">\(\prod_{j=1}^m n_j\)</span>.</p>
+<p>entonces, el número de formas en que puede ocurrir <span class="math inline">\(E_1 \cap E_2 \cap \ldots E_m\)</span> es <span class="math inline">\(\prod_{j=1}^m n_j=n_1 \times n_2 \times \cdots \times n_m\)</span>.</p>
 </div>
 </section>
-<section id="ejemplo" class="slide level2 center">
+<section id="ejemplo-1" class="slide level2 center">
 <h2>Ejemplo</h2>
 <p>En consulta, un médico determina que su paciente debe tomar medicación para dos condiciones, para la primera tiene 3 opciones de medicamentos y para la segunda 5 , ¿cuántas posibles prescripciones diferentes puede hacer el médico?</p>
 <ul>
@@ -402,8 +422,8 @@ Andreina Alamo
 <p>Por definición <span class="math inline">\(0 !=1\)</span>.</p>
 <p>Para <span class="math inline">\(k&lt;n\)</span>, ¿de cuántas formas se pueden seleccionar <span class="math inline">\(k\)</span> elementos de <span class="math inline">\(n\)</span>?</p>
 </section>
-<section class="slide level2 center">
-
+<section id="section-1" class="slide level2 center">
+<h2></h2>
 <p>1 - Si el orden importa y no es posible tener repeticiones</p>
 <p>La operación resultante se llama permutación sin repetición: <span class="math display">\[
 P_k^n=n \times(n-1) \times \ldots \times(n-(k-1))=\frac{n !}{(n-k) !}
@@ -426,13 +446,15 @@ k
 \end{array}\right)=\frac{n !}{k !(n-k) !}
 \]</span></p>
 </section>
-<section id="ejemplo-1" class="slide level2 center">
+<section id="ejemplo-2" class="slide level2 center">
 <h2>Ejemplo</h2>
 <p>1 - ¿De cuántas maneras se puede ordenar la secuencia ATGC?</p>
 <div class="fragment">
 <p><span class="math display">\[
 P_4^4=\frac{4 !}{0 !}=24
-\]</span> . . .</p>
+\]</span></p>
+</div>
+<div class="fragment">
 <p>2 - ¿Cuántas posibles claves de 3 dígitos se pueden obtener con los números de 1 a 5 ?</p>
 </div>
 <div class="fragment">
@@ -460,6 +482,8 @@ P_4^4=\frac{4 !}{0 !}=24
 <ul>
 <li class="fragment">En un grupo de 15 hombres y 18 mujeres, ¿de cuántas formas se pueden seleccionar 5 hombres y 6 mujeres?</li>
 <li class="fragment">Determinar cuántos posibles resultados tiene el Baloto.</li>
+<li class="fragment">¿De cuántas maneras pueden posar tres hombres y dos mujeres en línea para una fotografía de grupo?</li>
+<li class="fragment">… ¿y si las mujeres debe estar separadas?</li>
 </ul>
 </section>
 <section id="espacio-de-probabilidad" class="slide level2 center">
@@ -468,14 +492,14 @@ P_4^4=\frac{4 !}{0 !}=24
 <p>1 - <strong>Experimento aleatorio:</strong></p>
 <p>Un experimento aleatorio es cualquier experimento que satisface las siguientes condiciones: - Todos los posibles resultados del experimento son conocidos antes de ejecutarlo. - El resultado de cualquier ejecución del experimento no se puede conocer de antemano.</p>
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section-2" class="slide level2 center">
 <h2></h2>
 <p>2 - <strong>Espacio muestral <span class="math inline">\(\Omega\)</span></strong></p>
 <p>El espacio muestral es el conjunto de todos los posibles resultados de un experimento aleatorio.</p>
 <p>3 - <strong>Eventos</strong></p>
 <p>Cualquier subconjunto del espacio muestral se llama evento aleatorio. Cuando un evento tiene un solo elemento se denomina evento elemental o simple. El conjunto <span class="math inline">\(\Phi\)</span> se llama evento imposible, que nunca sucede, y el conjunto <span class="math inline">\(\Omega\)</span> se llama evento seguro, que siempre sucede. Si <span class="math inline">\(A\)</span> es un evento y el resultado observado del experimento aleatorio es un elemento de <span class="math inline">\(A\)</span> significa que el evento <span class="math inline">\(A\)</span> ha sucedido.</p>
 </section>
-<section id="ejemplo-2" class="slide level2 center">
+<section id="ejemplo-3" class="slide level2 center">
 <h2>Ejemplo</h2>
 <p>Considere un estudio longitudinal con 3 pacientes.</p>
 <ul>
@@ -483,7 +507,7 @@ P_4^4=\frac{4 !}{0 !}=24
 <li class="fragment"><strong>Espacio muestral:</strong> <span class="math inline">\(\Omega=\{0,1,2,3\}\)</span>.</li>
 </ul>
 </section>
-<section id="section-2" class="slide level2 center">
+<section id="section-3" class="slide level2 center">
 <h2></h2>
 <p>4 - <strong>Medida de probabilidad:</strong></p>
 <p>Una medida de probabilidad es una función que le asigna un número entre 0 y 1 a los eventos de un experimento aleatorio: <span class="math display">\[
@@ -515,7 +539,7 @@ P(A)=\lim _{n \rightarrow \infty} h_n(A)
 <li class="fragment">La validez de esta estimación depende de que las condiciones en que se realiza el experimento sean “idénticas”.</li>
 </ul>
 </section>
-<section id="ejemplo-3" class="slide level2 smaller center">
+<section id="ejemplo-4" class="slide level2 smaller center">
 <h2>Ejemplo</h2>
 <p>Considerar las siguientes situaciones:</p>
 <ol type="a">
@@ -532,7 +556,7 @@ P(A)=\lim _{n \rightarrow \infty} h_n(A)
 
 <p>En la situación a., si se toman los registros de producción durante cierto número de días, entonces se puede calcular la probabilidad de que la producción de un día no se pueda distribuir mediante: <span class="math display">\[\frac{\text{No. de días en los que la producción no se pudo distribuir}}{\text{No. de días en los que se tomaron los registros}}\]</span></p>
 </section>
-<section id="section-3" class="slide level2 smaller center">
+<section id="section-4" class="slide level2 smaller center">
 <h2></h2>
 <p>Además, es correcto estimar esta probabilidad mediante el método frecuentista, porque se considera que no hay cambios en el programa de producción de un día a otro. En la situación b., si se toman los registros de seguridad de un periodo determinado de tiempo, entonces se puede calcular la probabilidad de que una persona que no trabaje en la oficina pueda pasar sin tener que anunciarse en recepción, como sigue: <span class="math display">\[
 \frac{\text { No. de personas que ingresaron al complejo sin tener que anunciarse y que no trabajan allí}}{\text { No. de personas que entraron al complejo sin trabajar en él}}
@@ -541,6 +565,43 @@ P(A)=\lim _{n \rightarrow \infty} h_n(A)
 <section class="slide level2 center">
 
 <p>En este caso, es correcto calcular esta probabilidad por medio de la frecuencia relativa siempre y cuando las condiciones de seguridad no varíen drásticamente de un día a otro.</p>
+</section>
+<section id="ejemplo-5" class="slide level2 smaller center">
+<h2>Ejemplo</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">A favor (F)</th>
+<th style="text-align: center;">En contra (C)</th>
+<th style="text-align: center;">NS/NR (S)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Hombre</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mujer</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Al elegir una persona al azar dentro de ese grupo, calcular la probabilidad de que:</p>
+<ul>
+<li class="fragment">Esté a favor.</li>
+<li class="fragment">No esté en contra.</li>
+<li class="fragment">Tenga alguna opinión.</li>
+<li class="fragment">Sea hombre pero no esté a favor.</li>
+<li class="fragment">Sea hombre o esté a favor.</li>
+<li class="fragment">No sea hombre y no esté a favor.</li>
+<li class="fragment">Sea hombre y tenga alguna opinión.</li>
+</ul>
 </section>
 <section id="algunas-propiedades-de-una-medida-de-probabilidad" class="slide level2 center">
 <h2>Algunas propiedades de una medida de probabilidad</h2>
@@ -558,12 +619,14 @@ P(A)=\lim _{n \rightarrow \infty} h_n(A)
 <li class="fragment"><span class="math inline">\(P(A \cup B)=P(A)+P(B)-P(A \cap B)\)</span></li>
 </ul>
 </section>
-<section id="ejemplo-4" class="slide level2 smaller center">
+<section id="ejemplo-6" class="slide level2 smaller center">
 <h2>Ejemplo</h2>
 <p>Sean <span class="math inline">\(A, B\)</span> y <span class="math inline">\(C\)</span> eventos tales que <span class="math inline">\(P(A)=0.50, P(B)=0.26, P(C)=0.55, P(A \cap B)=0.15\)</span> <span class="math inline">\(P(A \cap C)=0.25, P(B \cap C)=0.15\)</span> y <span class="math inline">\(P(A \cap B \cap C)=0.05\)</span>. Con base en esta información, calcular las siguientes probabilidades: <span class="math inline">\(P(A \cup B), P\left(A \cap C^C\right), P\left(A^C \cup C\right)\)</span>.</p>
+<div class="fragment">
 <p>Aplicando las propiedades se obtiene que <span class="math display">\[
-P(A \cup B)=P(A)+P(B)-P(A \cap B)=0.50+0.26-0.15=0.61 .
+P(A \cup B)=P(A)+P(B)-P(A \cap B)=0.50+0.26-0.15=0.61.
 \]</span></p>
+</div>
 </section>
 <section class="slide level2 center">
 
@@ -571,7 +634,7 @@ P(A \cup B)=P(A)+P(B)-P(A \cap B)=0.50+0.26-0.15=0.61 .
 <p><span class="math inline">\(P(A)=0.50, P(B)=0.26, P(C)=0.55, P(A \cap B)=0.15\)</span> <span class="math inline">\(P(A \cap C)=0.25, P(B \cap C)=0.15\)</span> y <span class="math inline">\(P(A \cap B \cap C)=0.05\)</span></p>
 </blockquote>
 <p>Además, <span class="math inline">\(P(A)=P(A \cap C)+P\left(A \cap C^C\right)\)</span> de donde <span class="math display">\[
-P\left(A \cap C^C\right)=P(A)-P(A \cap C)=0.50-0.25=0.25 .
+P\left(A \cap C^C\right)=P(A)-P(A \cap C)=0.50-0.25=0.25.
 \]</span></p>
 </section>
 <section class="slide level2 center">
@@ -585,99 +648,168 @@ P\left(A^C \cup C\right)=1-P\left(\left(A^C \cup C\right)^C\right)
 =1-P\left(A \cap C^C\right)=1-0.25=0.75 .
 \]</span></p>
 </section>
-<section>
-<section id="teoremas-básicos-de-probabilidad" class="title-slide slide level1 center">
-<h1>Teoremas básicos de probabilidad</h1>
-
-</section>
-<section id="teorema-aditivo" class="slide level2 center">
-<h2>Teorema aditivo</h2>
-<p>El teorema aditivo está relacionado con la probabilidad de la unión de eventos, así:</p>
-<p>En particular, para <span class="math inline">\(m=3\)</span></p>
-<p><span class="math display">\[
-P\left(A_1 \cup A_1 \cup A_3\right) = P\left(A_1\right)+P\left(A_2\right)+P\left(A_3\right)
-\]</span></p>
-<p><span class="math display">\[
--P\left(A_1 \cap A_2\right)-P\left(A_1 \cap A_3\right)-P\left(A_2 \cap A_3\right)+P\left(A_1 \cap A_2 \cap A_3\right)
-\]</span></p>
-</section>
 <section id="probabilidad-condicional" class="slide level2 center">
 <h2>Probabilidad condicional</h2>
-<p>La probabilidad condicional es una medida de probabilidad definida por:</p>
+<p>Sean A y B eventos aleatorios, la probabilidad condicional es una medida de probabilidad definida por:</p>
 <p><span class="math display">\[
-P\left(A_i \mid A_j\right)=\frac{P\left(A_i \cap A_j\right)}{P\left(A_j\right)}
+P\left(A \mid B\right)=\frac{P\left(A \cap B\right)}{P\left(B\right)}
 \]</span></p>
-<p>siempre que <span class="math inline">\(P\left(A_j\right) \neq 0\)</span>. Dado que la probabilidad condicional también constituye una medida de probabilidad, cumple las propiedades de una medida de probabilidad.</p>
+<p>siempre que <span class="math inline">\(P\left(B\right) \neq 0\)</span>. Dado que la probabilidad condicional también constituye una medida de probabilidad, cumple las propiedades de una medida de probabilidad.</p>
 </section>
-<section class="slide level2 center">
-
-<p>Por ejemplo:</p>
+<section id="propiedades-de-las-probabilidades-condicionales" class="slide level2 center">
+<h2>Propiedades de las probabilidades condicionales</h2>
 <ul>
-<li class="fragment"><span class="math inline">\(P\left(\phi \mid A_j\right)=0\)</span></li>
-<li class="fragment"><span class="math inline">\(P\left(A_i \mid A_j\right)=1-P\left(A_i^c \mid A_j\right)\)</span></li>
-<li class="fragment"><span class="math inline">\(P\left(A_i \cup A_k \mid A_j\right) = P\left(A_1 \mid A_j\right)+P\left(A_k \mid A_j\right)-P\left(A_k \cap A_k \mid A_j\right)\)</span></li>
+<li class="fragment"><span class="math inline">\(P\left(\phi \mid E\right)=0\)</span></li>
+<li class="fragment"><span class="math inline">\(P\left(A \mid E\right)=1-P\left(A^c \mid E\right)\)</span></li>
+<li class="fragment"><span class="math inline">\(P\left(A \cup B \mid E\right) = P\left(A \mid E\right)+P\left(B \mid E\right)-P\left(A \cap B \mid E\right)\)</span></li>
 </ul>
 </section>
-<section id="teorema-multiplicativo" class="slide level2 center">
+<section id="ejemplo-7" class="slide level2 center">
+<h2>Ejemplo</h2>
+<p>Continuando con el ejercicio de la encuesta de opinión.</p>
+<p>Al elegir una persona al azar:</p>
+<ol type="1">
+<li class="fragment">Si el individuo elegido es hombre, calcular la probabilidad de que esté en contra.</li>
+<li class="fragment">(Ejercicio) Si el individuo elegido no está en contra, calcular la probabilidad de que sea mujer.</li>
+</ol>
+</section>
+<section id="ejemplo-8" class="slide level2 smaller center">
+<h2>Ejemplo</h2>
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">A favor (F)</th>
+<th style="text-align: center;">En contra (C)</th>
+<th style="text-align: center;">NS/NR (S)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Hombre</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mujer</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li class="fragment">Si el individuo elegido es hombre, calcular la probabilidad de que esté en contra.</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\begin{align}
+P(C  \mid H) &amp;= \frac{P(C\cap H)}{P(H)}=\frac{21 / 54}{38 / 54}\\
+&amp;= \frac{21}{38} = 0.553
+\end{align}\]</span></p>
+</div>
+</section>
+<section id="teorema-multiplicativo" class="slide level2 smaller center">
 <h2>Teorema multiplicativo</h2>
-<p>El teorema aditivo está relacionado con la probabilidad de la intersección de eventos.</p>
+<p>El teorema multiplicativo está relacionado con la probabilidad de la intersección de eventos.</p>
 <ul>
 <li class="fragment">En general, se tiene que: <span class="math display">\[
-P\left(A_i \cap A_j\right)=P\left(A_i \mid A_j\right) P\left(A_j\right)
+P\left(A \cap B\right)=P\left(A \mid B\right) P\left(B\right)
 \]</span></li>
-<li class="fragment">Si <span class="math inline">\(A_i\)</span> y <span class="math inline">\(A_j\)</span> son eventos independientes, entonces: <span class="math display">\[
-P\left(A_i \cap A_j\right)=P\left(A_i\right) P\left(A_j\right)
-\]</span></li>
+<li class="fragment">Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos independientes, entonces:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+P\left(A \cap B\right)=P\left(A\right) P\left(B\right)
+\]</span></p>
+</div>
+</section>
+<section id="ejemplo-9" class="slide level2 center">
+<h2>Ejemplo</h2>
+<p>Una empresa dispone de dos gerentes operativos que trabajan independientemente. La probabilidad de que cada funcionario esté disponible cuando se le necesite es 0.9.</p>
+<ul>
+<li class="fragment">¿Cuál es la probabilidad de que ningún funcionario esté disponible cuando se le necesite?</li>
+<li class="fragment">¿Cuál es la probabilidad de que por lo menos un funcionario esté disponible cuando se le necesite?</li>
 </ul>
 </section>
 <section id="teorema-de-la-probabilidad-total" class="slide level2 center">
 <h2>Teorema de la probabilidad total</h2>
 <p>El teorema de la probabilidad total se utiliza cuando se quiere encontrar la probabilidad de un evento que se encuentra “repartido” en las partes de una partición.</p>
-<p>Sea <span class="math inline">\(E_1, E_2, \ldots, E_m\)</span> una partición de <span class="math inline">\(\Omega\)</span>, es decir, <span class="math inline">\(E_1, E_2, \ldots, E_m\)</span> es una colección de subconjuntos de <span class="math inline">\(\Omega\)</span> tales que: <span class="math display">\[
-\begin{gathered}
-\bigcup_{i=1}^m E_i=\Omega \\
-E_i \cap E_j=\phi, \quad i \neq j
-\end{gathered}
+<p>Sea <span class="math inline">\(B_1 \text{ y } B_2\)</span> una partición de <span class="math inline">\(\Omega\)</span>, es decir:</p>
+<p><span class="math display">\[
+B_1 \cup B_2 = \Omega \\
+B_1 \cap B_2 = \phi
 \]</span></p>
 </section>
 <section class="slide level2 center">
 
 <p>Entonces, la probabilidad de ocurrencia de un evento <span class="math inline">\(A\)</span> se reparte en la partición de la siguiente forma: <span class="math display">\[
 \begin{aligned}
-P(A) &amp; =P\left(A \cap E_1\right)+P\left(A \cap E_2\right)+\ldots+P\left(A \cap E_m\right) \\
-&amp; =P\left(A \mid E_1\right) P\left(E_1\right)+P\left(A \mid E_2\right) P\left(E_2\right)\\
-&amp;\quad\quad\quad\quad+\ldots+P\left(A \mid E_m\right) P\left(E_m\right) \\
-&amp; =\sum_{i=1}^m P\left(A \mid E_i\right) P\left(E_i\right)
+P(A) &amp; =P\left(A \cap B_1\right)+P\left(A \cap B_2\right)\\
+&amp; =P\left(A \mid B_1\right) P\left(B_1\right)+P\left(A \mid B_2\right) P\left(B_2\right)\\
 \end{aligned}
 \]</span></p>
 </section>
+<section class="slide level2 center">
+
+<p align="center">
+<img src="probabilidad_total.png" width="800">
+</p>
+</section>
 <section id="teorema-de-bayes" class="slide level2 center">
 <h2>Teorema de Bayes</h2>
-<p>El teorema de Bayes es ampliamente utilizado en epidemiología, especialmente en la evaluación de las características de pruebas diagnósticas. En el teorema parte de la probabilidad a priori de la ocurrencia de un evento, <span class="math inline">\(P\left(E_k\right)\)</span>, para calcular su probabilidad a posteriori, <span class="math inline">\(P\left(E_k \mid A\right)\)</span>. <span class="math display">\[
-P\left(E_k \mid A\right)=\frac{P\left(A \mid E_k\right) P\left(E_k\right)}{\sum_{i=1}^m P\left(A \mid E_i\right) P\left(E_i\right)}
+<p>El teorema de Bayes es ampliamente utilizado en epidemiología, especialmente en la evaluación de las características de pruebas diagnósticas. En el teorema parte de la probabilidad a priori de la ocurrencia de un evento, <span class="math inline">\(P\left(B_1\right)\)</span>, para calcular su probabilidad a posteriori, <span class="math inline">\(P\left(B_1 \mid A\right)\)</span>. <span class="math display">\[
+P\left(B_1 \mid A\right)=\frac{P\left(A \mid B_1\right) P\left(B_1\right)}{P\left(A \mid B_1\right) P\left(B_1\right)+P\left(A \mid B_2\right) P\left(B_2\right)}
+\]</span></p>
+</section>
+<section id="ejemplo-10" class="slide level2 smaller center">
+<h2>Ejemplo</h2>
+<p>Una empresa elabora sus productos en dos fábricas. El porcentaje de producción total que se elabora en cada fábrica es del $40% $ y del <span class="math inline">\(60\%\)</span>. Además, el porcentaje de artículos defectuosos en cada fábrica es del <span class="math inline">\(1\%\)</span> y <span class="math inline">\(4\%\)</span>, respectivamente. Calcular la probabilidad de que un artículo que resulta ser defectuoso provenga de la primera fábrica.</p>
+<p>De acuerdo con el teorema de Bayes se tiene que: <span class="math display">\[
+\begin{aligned}
+P\left(F_1 \mid D\right) &amp; =\frac{P\left(F_1\right) P\left(D \mid F_1\right)}{ P\left(F_1\right) P\left(D\mid F_1\right) + P\left(F_2\right) P\left(D \mid F_2\right)} \\
+&amp; =\frac{P\left(F_1\right) P\left(D \mid F_1\right)}{P\left(F_1\right) P\left(D \mid F_1\right)+P\left(F_2\right) P\left(A \mid F_2\right)} \\
+&amp; =\frac{(0.4)(0.01)}{(0.4)(0.01)+(0.6)(0.04)} \\
+&amp; =0.143 .
+\end{aligned}
+\]</span></p>
+<p>Por lo tanto, a probabilidad de que un artículo que resulta ser defectuoso provenga de la primera fábrica es 0.143 .</p>
+</section>
+<section id="ejemplo-11" class="slide level2 smaller center">
+<h2>Ejemplo</h2>
+<p>Supongamos que un examen médico es positivo para una cierta enfermedad en el <span class="math inline">\(2\%\)</span> de los casos en los que una persona está realmente enferma, y en el <span class="math inline">\(10\%\)</span> de los casos en los que una persona está sana. Si sabemos que el <span class="math inline">\(1\%\)</span> de la población está realmente enferma, ¿cuál es la probabilidad de que una persona que tenga un resultado positivo en el examen realmente esté enferma?</p>
+<p>De acuerdo con el teorema de Bayes, podemos calcular esta probabilidad como sigue:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(E \mid +) &amp; = \frac{P(E) P(+ \mid E)}{P(E) P(+ \mid E) + P(\neg E) P(+ \mid \neg E)} \\
+&amp; = \frac{0.01 \times 0.02}{0.01 \times 0.02 + 0.99 \times 0.10} \\
+&amp; = 0.016
+\end{aligned}
 \]</span></p>
 
 <img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="2. Probabilidad_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="2. Probabilidad_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="4. Probabilidad_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

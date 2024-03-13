@@ -47,6 +47,27 @@ Sean $\Omega$ el conjunto universal, $A \in \Omega$ y $B \in \Omega$:
 
 Dado que el cálculo de probabilidades implica contar en algunas situaciones prácticas, a continuación se presentan algunos principios del conteo. En particular vamos a contestar la siguiente pregunta: para $k<n$, ¿de cuántas formas se pueden seleccionar $k$ elementos de $n$ ?
 
+## Principio aditivo del conteo
+
+Sean $E_1, E_2, \ldots, E_m$ conjuntos (procesos) que NO pueden ocurrir al mismo tiempo. Si:
+
+- $E_1$ ocurre de $n_1$ formas
+- $E_2$ ocurre de $n_2$ formas
+- $\vdots$
+- $E_m$ ocurre de $n_m$ formas
+
+. . .
+
+entonces, el número de formas en que puede ocurrir es $\sum_{j=1}^m n_j = n_1 + n_2 + \cdots + n_m$.
+
+## Ejemplo 
+
+¿De cuántas formas se puede cruzar un río una vez, si se cuenta con 1 bote y 2 barcos?
+
+. . . 
+
+$$1+2 = 3$$
+
 ## Principio multiplicativo del conteo
 
 Sean $E_1, E_2, \ldots, E_m$ conjuntos (procesos). Si:
@@ -58,7 +79,7 @@ Sean $E_1, E_2, \ldots, E_m$ conjuntos (procesos). Si:
 
 . . .
 
-entonces, el número de formas en que puede ocurrir $E_1 \cap E_2 \cap \ldots E_m$ es $\prod_{j=1}^m n_j$.
+entonces, el número de formas en que puede ocurrir $E_1 \cap E_2 \cap \ldots E_m$ es $\prod_{j=1}^m n_j=n_1 \times n_2 \times \cdots \times n_m$.
 
 ## Ejemplo 
 
@@ -83,7 +104,7 @@ Por definición $0 !=1$.
 
 Para $k<n$, ¿de cuántas formas se pueden seleccionar $k$ elementos de $n$?
 
----
+##
 
 1 - Si el orden importa y no es posible tener repeticiones
 
@@ -123,6 +144,7 @@ $$
 $$
 P_4^4=\frac{4 !}{0 !}=24
 $$
+
 . . .
 
 2 - ¿Cuántas posibles claves de 3 dígitos se pueden obtener con los números de 1 a 5 ?
@@ -149,6 +171,8 @@ $$
 
 - En un grupo de 15 hombres y 18 mujeres, ¿de cuántas formas se pueden seleccionar 5 hombres y 6 mujeres?
 - Determinar cuántos posibles resultados tiene el Baloto.
+- ¿De cuántas maneras pueden posar tres hombres y dos mujeres en línea para una fotografía de grupo?
+- ... ¿y si las mujeres debe estar separadas?
 
 ## Espacio de probabilidad
 
@@ -200,6 +224,7 @@ $$
 
 Observe que la probabilidad de un evento $A$, denotada con $P(A)$, es una medida de la incertidumbre relacionada con la posibilidad de la ocurrencia del evento $A$.
 
+
 ## Asignación clásica (frecuentista) de probabilidades
 
 Se supone que un experimento aleatorio se repite $n$ veces y que un evento $A$ asociado con estos experimentos ocurre exactamente $k$ veces. Entonces, la frecuencia relativa de $A, h_n(A)$, se define como la proporción entre la cantidad de veces que ocurre el evento $A$ y el número total de repeticiones del experimento aleatorio:
@@ -247,6 +272,23 @@ $$
 
 En este caso, es correcto calcular esta probabilidad por medio de la frecuencia relativa siempre y cuando las condiciones de seguridad no varíen drásticamente de un día a otro.
 
+## Ejemplo{.smaller}
+
+|        | A favor (F) | En contra (C) | NS/NR (S) |
+| :---:  | :---: | :---: | :---: |
+| Hombre | 15 | 21 | 2 |
+| Mujer  | 12 | 3  | 1 |
+
+Al elegir una persona al azar dentro de ese grupo, calcular la probabilidad de que:
+
+- Esté a favor.
+- No esté en contra.
+- Tenga alguna opinión.
+- Sea hombre pero no esté a favor.
+- Sea hombre o esté a favor.
+- No sea hombre y no esté a favor.
+- Sea hombre y tenga alguna opinión.
+
 ## Algunas propiedades de una medida de probabilidad
 
 Sea $\Omega$ un espacio muestral no vacío, $A$ y $B$ eventos aleatorios incluidos en $\Omega$ y $P()$ una medida de probabilidad sobre $\Omega$. Entonces se satisfacen las siguientes propiedades:
@@ -264,10 +306,11 @@ Sea $\Omega$ un espacio muestral no vacío, $A$ y $B$ eventos aleatorios incluid
 
 Sean $A, B$ y $C$ eventos tales que $P(A)=0.50, P(B)=0.26, P(C)=0.55, P(A \cap B)=0.15$ $P(A \cap C)=0.25, P(B \cap C)=0.15$ y $P(A \cap B \cap C)=0.05$. Con base en esta información, calcular las siguientes probabilidades: $P(A \cup B), P\left(A \cap C^C\right), P\left(A^C \cup C\right)$.
 
+. . .
 
 Aplicando las propiedades se obtiene que
 $$
-P(A \cup B)=P(A)+P(B)-P(A \cap B)=0.50+0.26-0.15=0.61 .
+P(A \cup B)=P(A)+P(B)-P(A \cap B)=0.50+0.26-0.15=0.61.
 $$
 
 ---
@@ -277,7 +320,7 @@ $$
 
 Además, $P(A)=P(A \cap C)+P\left(A \cap C^C\right)$ de donde
 $$
-P\left(A \cap C^C\right)=P(A)-P(A \cap C)=0.50-0.25=0.25 .
+P\left(A \cap C^C\right)=P(A)-P(A \cap C)=0.50-0.25=0.25.
 $$
 
 ---
@@ -293,64 +336,82 @@ $$
 =1-P\left(A \cap C^C\right)=1-0.25=0.75 .
 $$
 
-# Teoremas básicos de probabilidad
-
-## Teorema aditivo
-
-El teorema aditivo está relacionado con la probabilidad de la unión de eventos, así:
-
-En particular, para $m=3$
-
-$$
-P\left(A_1 \cup A_1 \cup A_3\right) = P\left(A_1\right)+P\left(A_2\right)+P\left(A_3\right)
-$$
-
-$$
--P\left(A_1 \cap A_2\right)-P\left(A_1 \cap A_3\right)-P\left(A_2 \cap A_3\right)+P\left(A_1 \cap A_2 \cap A_3\right)
-$$
-
 ## Probabilidad condicional
 
-La probabilidad condicional es una medida de probabilidad definida por:
+Sean A y B eventos aleatorios, la probabilidad condicional es una medida de probabilidad definida por:
 
 $$
-P\left(A_i \mid A_j\right)=\frac{P\left(A_i \cap A_j\right)}{P\left(A_j\right)}
+P\left(A \mid B\right)=\frac{P\left(A \cap B\right)}{P\left(B\right)}
 $$
 
-siempre que $P\left(A_j\right) \neq 0$.
+siempre que $P\left(B\right) \neq 0$.
 Dado que la probabilidad condicional también constituye una medida de probabilidad, cumple las propiedades de una medida de probabilidad.
 
----
+## Propiedades de las probabilidades condicionales
 
-Por ejemplo:
+- $P\left(\phi \mid E\right)=0$
+- $P\left(A \mid E\right)=1-P\left(A^c \mid E\right)$
+- $P\left(A \cup B \mid E\right) = P\left(A \mid E\right)+P\left(B \mid E\right)-P\left(A \cap B \mid E\right)$
 
-- $P\left(\phi \mid A_j\right)=0$
-- $P\left(A_i \mid A_j\right)=1-P\left(A_i^c \mid A_j\right)$
-- $P\left(A_i \cup A_k \mid A_j\right) = P\left(A_1 \mid A_j\right)+P\left(A_k \mid A_j\right)-P\left(A_k \cap A_k \mid A_j\right)$
+## Ejemplo
 
-## Teorema multiplicativo
+Continuando con el ejercicio de la encuesta de opinión.
 
-El teorema aditivo está relacionado con la probabilidad de la intersección de eventos.
+Al elegir una persona al azar:
+
+1. Si el individuo elegido es hombre, calcular la probabilidad de que esté en contra.
+2. (Ejercicio) Si el individuo elegido no está en contra, calcular la probabilidad de que sea mujer.
+
+## Ejemplo{.smaller}
+
+> |        | A favor (F) | En contra (C) | NS/NR (S) |
+> | :---:  | :---: | :---: | :---: |
+> | Hombre | 15    | 21 | 2 |
+> | Mujer  | 12 | 3  | 1 |
+
+- Si el individuo elegido es hombre, calcular la probabilidad de que esté en contra.
+
+. . . 
+
+$$\begin{align} 
+P(C  \mid H) &= \frac{P(C\cap H)}{P(H)}=\frac{21 / 54}{38 / 54}\\
+&= \frac{21}{38} = 0.553
+\end{align}$$
+
+## Teorema multiplicativo{.smaller}
+
+El teorema multiplicativo está relacionado con la probabilidad de la intersección de eventos.
 
 - En general, se tiene que:
 $$
-P\left(A_i \cap A_j\right)=P\left(A_i \mid A_j\right) P\left(A_j\right)
+P\left(A \cap B\right)=P\left(A \mid B\right) P\left(B\right)
 $$
-- Si $A_i$ y $A_j$ son eventos independientes, entonces:
+- Si $A$ y $B$ son eventos independientes, entonces:
+
+. . . 
+
 $$
-P\left(A_i \cap A_j\right)=P\left(A_i\right) P\left(A_j\right)
+P\left(A \cap B\right)=P\left(A\right) P\left(B\right)
 $$
+
+## Ejemplo 
+
+Una empresa dispone de dos gerentes operativos que trabajan independientemente. La probabilidad de que cada funcionario esté disponible cuando se le necesite es 0.9.
+
+- ¿Cuál es la probabilidad de que ningún funcionario esté disponible cuando se le necesite?
+- ¿Cuál es la probabilidad de que por lo menos un funcionario esté disponible cuando se le necesite?
+
 
 ## Teorema de la probabilidad total
 
 El teorema de la probabilidad total se utiliza cuando se quiere encontrar la probabilidad de un evento que se encuentra "repartido" en las partes de una partición.
 
-Sea $E_1, E_2, \ldots, E_m$ una partición de $\Omega$, es decir, $E_1, E_2, \ldots, E_m$ es una colección de subconjuntos de $\Omega$ tales que:
+Sea $B_1 \text{ y } B_2$ una partición de $\Omega$, es decir:
+
+
 $$
-\begin{gathered}
-\bigcup_{i=1}^m E_i=\Omega \\
-E_i \cap E_j=\phi, \quad i \neq j
-\end{gathered}
+B_1 \cup B_2 = \Omega \\
+B_1 \cap B_2 = \phi
 $$
 
 ---
@@ -358,17 +419,60 @@ $$
 Entonces, la probabilidad de ocurrencia de un evento $A$ se reparte en la partición de la siguiente forma:
 $$
 \begin{aligned}
-P(A) & =P\left(A \cap E_1\right)+P\left(A \cap E_2\right)+\ldots+P\left(A \cap E_m\right) \\
-& =P\left(A \mid E_1\right) P\left(E_1\right)+P\left(A \mid E_2\right) P\left(E_2\right)\\
-&\quad\quad\quad\quad+\ldots+P\left(A \mid E_m\right) P\left(E_m\right) \\
-& =\sum_{i=1}^m P\left(A \mid E_i\right) P\left(E_i\right)
+P(A) & =P\left(A \cap B_1\right)+P\left(A \cap B_2\right)\\
+& =P\left(A \mid B_1\right) P\left(B_1\right)+P\left(A \mid B_2\right) P\left(B_2\right)\\
 \end{aligned}
 $$
+
+----
+
+
+<p align="center">
+<img src="probabilidad_total.png" width="800">
+</p>
 
 ## Teorema de Bayes
 
 El teorema de Bayes es ampliamente utilizado en epidemiología, especialmente en la evaluación de las características de pruebas diagnósticas.
-En el teorema parte de la probabilidad a priori de la ocurrencia de un evento, $P\left(E_k\right)$, para calcular su probabilidad a posteriori, $P\left(E_k \mid A\right)$.
+En el teorema parte de la probabilidad a priori de la ocurrencia de un evento, $P\left(B_1\right)$, para calcular su probabilidad a posteriori, $P\left(B_1 \mid A\right)$.
 $$
-P\left(E_k \mid A\right)=\frac{P\left(A \mid E_k\right) P\left(E_k\right)}{\sum_{i=1}^m P\left(A \mid E_i\right) P\left(E_i\right)}
+P\left(B_1 \mid A\right)=\frac{P\left(A \mid B_1\right) P\left(B_1\right)}{P\left(A \mid B_1\right) P\left(B_1\right)+P\left(A \mid B_2\right) P\left(B_2\right)}
 $$
+
+## Ejemplo{.smaller}
+
+Una empresa elabora sus productos en dos fábricas. El porcentaje de producción total que se elabora en cada fábrica es del $40\% $ y del $60\%$. Además, el porcentaje de artículos defectuosos en cada fábrica es del $1\%$ y $4\%$, respectivamente. Calcular la probabilidad de que un artículo que resulta ser defectuoso provenga de la primera fábrica.
+
+De acuerdo con el teorema de Bayes se tiene que:
+$$
+\begin{aligned}
+P\left(F_1 \mid D\right) & =\frac{P\left(F_1\right) P\left(D \mid F_1\right)}{ P\left(F_1\right) P\left(D\mid F_1\right) + P\left(F_2\right) P\left(D \mid F_2\right)} \\
+& =\frac{P\left(F_1\right) P\left(D \mid F_1\right)}{P\left(F_1\right) P\left(D \mid F_1\right)+P\left(F_2\right) P\left(A \mid F_2\right)} \\
+& =\frac{(0.4)(0.01)}{(0.4)(0.01)+(0.6)(0.04)} \\
+& =0.143 .
+\end{aligned}
+$$
+
+Por lo tanto, a probabilidad de que un artículo que resulta ser defectuoso provenga de la primera fábrica es 0.143 .
+
+## Ejemplo{.smaller}
+
+Supongamos que un examen médico es positivo para una cierta enfermedad en el $92\%$ de los casos en los que una persona está realmente enferma, y en el $10\%$ de los casos en los que una persona está sana. Si sabemos que el $1\%$ de la población está realmente enferma, ¿cuál es la probabilidad de que una persona que tenga un resultado positivo en el examen realmente esté enferma?
+
+De acuerdo con el teorema de Bayes, podemos calcular esta probabilidad como sigue:
+
+$$
+\begin{aligned}
+P(E \mid +) & = \frac{P(E) P(+ \mid E)}{P(E) P(+ \mid E) + P(\neg E) P(+ \mid \neg E)} \\
+& = \frac{0.01 \times 0.92}{0.01 \times 0.92 + 0.99 \times 0.10} \\
+& = 0.085 
+\end{aligned}
+$$
+
+## Ejercicio{.smaller}
+
+Una empresa elabora sus productos en dos fábricas. El porcentaje de producción total que se elabora en cada fábrica es del $40\%, 10\%$ y del $50\%$. Además, el porcentaje de artículos defectuosos en cada fábrica es del $1\%, 2\%$ y $4\%$, respectivamente. 
+
+1. Calcular la probabilidad de que un artículo que resulta estar en buen estado provenga de la primera fábrica.
+
+2. Calcular la probabilidad de que un artículo que resulta ser defectuoso provenga de la segunda fábrica.
