@@ -1,0 +1,4 @@
+- source: 5. Variable aleatoria.qmd
+  quarto-pub:
+    - id: 07ba34af-c6cf-49c3-b28c-9625e1733a93
+      url: 'https://aalamo.quarto.pub/esf-variables-aleatorias'
