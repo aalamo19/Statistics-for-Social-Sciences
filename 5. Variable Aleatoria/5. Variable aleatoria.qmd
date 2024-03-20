@@ -75,9 +75,9 @@ $$ \begin{align*}
     \omega  &\longmapsto X(\omega)
 \end{align*} $$
 
-Las variables aleatorias pueden ser de dos tipos dependiendo su recorrido: **discretas** o **continuas**.
+---
 
-##
+Las variables aleatorias pueden ser de dos tipos dependiendo su recorrido: **discretas** o **continuas**.
 
 1. **Discretas:** Cuando su recorrido es numerable. Un buen ejemplo de variables discretas son los conteos, como el número de casos incidentes de SarsCov2 en un mes determinado.
 
@@ -93,15 +93,23 @@ Al arrojar dos dados, sabemos que la suma $X$ de los puntos que caen hacia arrib
 
 ## Ejemplo 2
 
-- Experimento aleatorio:lanzar tres veces una moneda al aire.
-- $X$ :"número de caras obtenido" al final de los tres lanzamientos.
+- Experimento aleatorio: lanzar tres veces una moneda al aire.
+- $X$: "número de caras obtenido" al final de los tres lanzamientos.
 
 . . . 
 
 Así:
+
 $$
-\Omega=\{(c, c, c),(c, c, s),(c, s, c),(c, s, s),(s, c, c),(s, c, s),(s, s, c),(s, s, s)\}
+\Omega=\{(c, c, c),(c, c, s),(c, s, c),(c, s, s),(s, c, c)
 $$
+
+$$
+\quad\quad,(s, c, s),(s, s, c),(s, s, s)\}
+$$
+
+---
+
 y $X$ es una v.a. discreta con valores:
 $$
 X((c, c, c))=3, X((c, c, s))=2, X((c, s, c))=2, X((s, c, c))=2, \\
@@ -179,8 +187,7 @@ Una función de distribución $F_X$ de una v.a. discreta $X$ satisface que:
 
 - $0 \leq F_X(x) \leq 1$.
 
-- $$\mathrm{P}(X>x)=1-F_X(x) \text { y } \mathrm{P}(X \geq x)=1-F_X\left(x^{-}\right) .
-$$
+- $$\mathrm{P}(X>x)=1-F_X(x) \text { y } \mathrm{P}(X \geq x)=1-F_X\left(x^{-}\right) .$$
 donde $x^{-}$representa el máximo valor que puede asumir $X$ estrictamente menor que $x$.
 
 ## Ejemplo 2{.smaller}
@@ -208,3 +215,166 @@ plot(x = c(0, x), y = c(0, Fx), type = "s", xlab = "x", ylab = "F(x)", col = "ca
 points(x, Fx, col = "cadetblue", pch = 15)
 ```
 
+## Valor esperado
+
+El valor esperado de una variable aleatoria $X$ discreta, denotado por $E(X)$, representa el centro de gravedad de la distribución de $X$. 
+
+Por ejemplo, si $X$ toma los valores $\{0,1,2,3\}$, entonces 
+
+$$
+E(X) = \sum_{k=0}^3 k\ \mathrm{P}(X = k)$$
+$$= 0\ \mathrm{P}(X = 0) + 1\ \mathrm{P}(X = 1) + 2\ \mathrm{P}(X = 2) + 3\ \mathrm{P}(X = 3)
+$$
+
+---
+
+En general, 
+
+$$
+E(X) =\sum_{k=0}^n k\ f_X(k)
+$$
+
+Note que entonces $E(X)$ es el promedio de los valores que puede tomar $X$ ponderados por las probabilidades de cada uno de esos valores.
+
+## Propiedades
+
+- La media muestral tiende a $E(X)$ a medida que aumenta el tamaño de la muestra.
+
+- El valor esperado es **lineal**: $E(aX + b) = aE(X) + b$
+
+## Ejemplo
+
+Sea $X$ la variable aleatoria que representa el resultado de lanzar un dado. Es decir, toma los valores $k=1, 2, \ldots, 6$, cada uno con probabilidad $f_X(k) = \frac{1}{6}$. El valor esperado de $X$ es:
+
+$$
+E(X) = \sum_{k=1}^6 k\ f_X(k) = 
+$$
+$$
+= 1\ \frac{1}{6} + 2\ \frac{1}{6} + 3\ \frac{1}{6} + 4\ \frac{1}{6} + 5\ \frac{1}{6} + 6\ \frac{1}{6} 
+$$
+
+---
+
+$$
+=\frac{1}{6}(1+2+3+4+5+6) = \frac{1}{6}21=\frac{21}{6} = 3.5
+$$
+
+Además, pondremos a prueba la propiedad de la media. A continuación se presentan los resultados obtenidos de lanzar un dado diez veces:
+
+```{r}
+set.seed(1)
+x <- sample.int(6,10,replace = T)
+x
+```
+
+Calcule ahora, el promedio de los dos primeros valores, luego el de los tres primeros, a continuación el de los cuatro primeros, y así sucesivamente hasta calcular el promedio del los 10 primeros valores, es decir, todos.
+
+---
+
+El resultado es el siguiente:
+
+```{r}
+cumsum(x)/(1:10)
+```
+
+Observe que a medida que se agregan más lanzamientos del dado al promedio, éste se va acercando al valore esperado (3.5). Si se calcula el promedio de 100 lanzamientos aleatorios, se obtiene:
+
+```{r}
+set.seed(1)
+x <- sample.int(6,100,replace = T)
+mean(x)
+```
+
+---
+
+con mil lanzamientos...
+
+```{r}
+x <- sample.int(6,1000,replace = T)
+x_bar <- cumsum(x)/(1:1000)
+par(bty = "l")
+plot(x_bar,type = "l",xlab = "# Lanzamientos",
+     ylab = "Promedio")
+abline(h = 3.5,lty = 2,col = "gray")
+```
+
+---
+
+Entonces concluimos que el valor esperado de $X$ es ese "promedio en el infinito" de la variable aleatoria.
+
+## Varianza{.small}
+
+$\newcommand{\Var}{\mathrm{Var}}$
+Así como la media muestral tiende al valor esperado $E(X)$, la varianza muestral también tiende a un parámetro de la variable aleatoria, puntualmente a la **varianza** de la variable aleatoria: $\Var(X)$. Se define así:
+
+$$
+\Var(X) = \sum_{k=0}^n (k - E(X))^2 f_X(k)
+$$
+
+
+
+¿Qué similitudes identifica con la fórmula del valor esperado?
+
+¿Qué similitudes identifica con la fórmula de la varianza muestral?
+
+## Propiedades
+
+
+- $\Var(X) = E(X^2) - E(X)^2$
+- $\Var(X) \geq 0$
+- $\Var(a) = 0$
+- $\Var(aX + b) = a^2\Var(X)$
+
+## Ejemplo
+
+Sea $X$ la variable aleatoria que representa el resultado de lanzar un dado. Es decir, toma los valores $k=1, 2, \ldots, 6$, cada uno con probabilidad $f_X(k) = \frac{1}{6}$. Sabiendo que  $E(X)=3.5$, la varianza de $X$ es:
+
+$$
+\Var(X) = \sum_{k=1}^6 (k - 3.5)^2\ \frac{1}{6}
+$$
+$$
+= (1 - 3.5)^2\frac{1}{6} +(2 - 3.5)^2\frac{1}{6} + \cdots + (6 - 3.5)^2\frac{1}{6}
+$$
+
+$$
+= \frac{1}{6}\left[(1 - 3.5)^2 + \cdots + (6 - 3.5)^2\right]
+$$
+
+---
+
+$$
+= \frac{1}{6}17.5 = 2.91\bar{6}
+$$
+
+## Convergencia
+
+De la misma manera en que se hizo con el valor esperado, verificaremos que la varianza muestral se acerca cada vez más a la varianza de la variable aleatoria a medida que se lanza más veces el dado:
+
+```{r}
+set.seed(1)
+x <- sample.int(6,1000,replace = T)
+x_var <- sapply(1:1000,\(k)(var(x[1:k])))
+par(bty = "l")
+plot(x_var,type = "l",xlab = "# Lanzamientos",
+     ylab = "Varianza muestral")
+abline(h = 2.916667,lty = 2,col = "gray")
+```
+
+## Algunas distribuciones discretas
+
+Existen algunos *tipos* (distribuciones) de variables aleatorias que se encuentran con frecuencia. Por tanto, es útil darles nombre y estudiar sus propiedades como valor esperado y varianza. Los ejemplos del lanzamiento de un dado o de una moneda, corresponden a la primera distribución.
+
+## Distribución uniforme discreta
+
+Si todos los posibles resultados de una variable aleatoria tienen la misma probabilidad de ocurrir, se dice que **la variable aleatoria sigue una distribución uniforme discreta**. 
+
+Por ejemplo, el lanzamiento de una moneda tiene 2 opciones, cara (0) y sello (1), ambas con probabilidad 0.5. El lanzamiento de un dado tiene 6 opciones, del 1 al 6, cada una con probabilidad $\frac{1}{6}$.
+
+## Propiedades
+
+Si $X$ es variable aleatoria con distribución uniforme discreta compuesta por $K$ categorías, entonces:
+
+- $f_X(k) = \frac{1}{K}$ para $k = 1,\ldots,K$.
+- $E(X) = \sum_{k=1}^K k\ f_X(k) = \sum_{k=1}^K \frac{k}{K} = \frac{K+1}{2}$
+- $\Var(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}$
+$\quad\quad=\frac{K^2-1}{12}$
