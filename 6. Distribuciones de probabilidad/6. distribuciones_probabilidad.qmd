@@ -1,0 +1,48 @@
+---
+title: "Estadística Descriptiva Bivarada"
+author: "Andreina Alamo"
+format:
+  revealjs:
+    theme: serif
+    center: true
+    logo: logo.png
+    css: logo.css
+    incremental: true 
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Algunas distribuciones discretas
+
+Existen algunos *tipos* (distribuciones) de variables aleatorias que se encuentran con frecuencia. Por tanto, es útil darles nombre y estudiar sus propiedades como valor esperado y varianza. Los ejemplos del lanzamiento de un dado o de una moneda, corresponden a la primera distribución.
+
+## Distribución uniforme discreta
+
+Si todos los posibles resultados de una variable aleatoria tienen la misma probabilidad de ocurrir, se dice que **la variable aleatoria sigue una distribución uniforme discreta**. 
+
+Por ejemplo, el lanzamiento de una moneda tiene 2 opciones, cara (0) y sello (1), ambas con probabilidad 0.5. El lanzamiento de un dado tiene 6 opciones, del 1 al 6, cada una con probabilidad $\frac{1}{6}$.
+
+## Propiedades
+
+Si $X$ es variable aleatoria con distribución uniforme discreta compuesta por $K$ categorías, entonces:
+
+- $f_X(k) = \frac{1}{K}$ para $k = 1,\ldots,K$.
+- $E(X) = \sum_{k=1}^K k\ f_X(k) = \sum_{k=1}^K \frac{k}{K} = \frac{K+1}{2}$
+- $\operatorname{Var}(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}$
+$\quad\quad=\frac{K^2-1}{12}$
+
+---- 
+
+## Variable aleatoria continua
+
+---
+# Referencias{.center}
+
+-Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558
+
+- Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley & Sons.
+
+-Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
+
+-Peña, D. (2014). Fundamentos de estadística. Alianza editorial.

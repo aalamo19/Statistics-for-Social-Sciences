@@ -385,10 +385,10 @@ Andreina Alamo
   f : \Omega &amp;\longmapsto \mathbb{R} \\
     \omega  &amp;\longmapsto X(\omega)
 \end{align*} \]</span></p>
-<p>Las variables aleatorias pueden ser de dos tipos dependiendo su recorrido: <strong>discretas</strong> o <strong>continuas</strong>.</p>
 </section>
-<section id="section" class="slide level2 center">
-<h2></h2>
+<section class="slide level2 center">
+
+<p>Las variables aleatorias pueden ser de dos tipos dependiendo su recorrido: <strong>discretas</strong> o <strong>continuas</strong>.</p>
 <ol type="1">
 <li class="fragment"><p><strong>Discretas:</strong> Cuando su recorrido es numerable. Un buen ejemplo de variables discretas son los conteos, como el número de casos incidentes de SarsCov2 en un mes determinado.</p></li>
 <li class="fragment"><p><strong>Continuas:</strong> Cuando su recorrido es no numerable, es decir cuando entre dos valores de la variable hay infinitos posibles valores de ésta, como por ejemplo la longitud(m) y la temperatura <span class="math inline">\(\left({ }^{\circ} \mathrm{C}\right)\)</span>.</p></li>
@@ -405,18 +405,26 @@ Andreina Alamo
 <section id="ejemplo-2" class="slide level2 center">
 <h2>Ejemplo 2</h2>
 <ul>
-<li class="fragment">Experimento aleatorio:lanzar tres veces una moneda al aire.</li>
-<li class="fragment"><span class="math inline">\(X\)</span> :“número de caras obtenido” al final de los tres lanzamientos.</li>
+<li class="fragment">Experimento aleatorio: lanzar tres veces una moneda al aire.</li>
+<li class="fragment"><span class="math inline">\(X\)</span>: “número de caras obtenido” al final de los tres lanzamientos.</li>
 </ul>
 <div class="fragment">
-<p>Así: <span class="math display">\[
-\Omega=\{(c, c, c),(c, c, s),(c, s, c),(c, s, s),(s, c, c),(s, c, s),(s, s, c),(s, s, s)\}
-\]</span> y <span class="math inline">\(X\)</span> es una v.a. discreta con valores: <span class="math display">\[
+<p>Así:</p>
+<p><span class="math display">\[
+\Omega=\{(c, c, c),(c, c, s),(c, s, c),(c, s, s),(s, c, c)
+\]</span></p>
+<p><span class="math display">\[
+\quad\quad,(s, c, s),(s, s, c),(s, s, s)\}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2 center">
+
+<p>y <span class="math inline">\(X\)</span> es una v.a. discreta con valores: <span class="math display">\[
 X((c, c, c))=3, X((c, c, s))=2, X((c, s, c))=2, X((s, c, c))=2, \\
 X((s, s, c))=1, X((s, c, s))=1, X((c, s, s))=1 \mathrm{y}
 X((s, s, s))=0
 \]</span></p>
-</div>
 </section>
 <section id="variable-aleatoria-discreta" class="slide level2 center">
 <h2>Variable aleatoria discreta</h2>
@@ -470,8 +478,7 @@ X((s, s, s))=0
 <p>Una función de distribución <span class="math inline">\(F_X\)</span> de una v.a. discreta <span class="math inline">\(X\)</span> satisface que:</p>
 <ul>
 <li class="fragment"><p><span class="math inline">\(0 \leq F_X(x) \leq 1\)</span>.</p></li>
-<li class="fragment"><p><span class="math display">\[\mathrm{P}(X&gt;x)=1-F_X(x) \text { y } \mathrm{P}(X \geq x)=1-F_X\left(x^{-}\right) .
-\]</span> donde <span class="math inline">\(x^{-}\)</span>representa el máximo valor que puede asumir <span class="math inline">\(X\)</span> estrictamente menor que <span class="math inline">\(x\)</span>.</p></li>
+<li class="fragment"><p><span class="math display">\[\mathrm{P}(X&gt;x)=1-F_X(x) \text { y } \mathrm{P}(X \geq x)=1-F_X\left(x^{-}\right) .\]</span> donde <span class="math inline">\(x^{-}\)</span>representa el máximo valor que puede asumir <span class="math inline">\(X\)</span> estrictamente menor que <span class="math inline">\(x\)</span>.</p></li>
 </ul>
 </section>
 <section id="ejemplo-2-2" class="slide level2 smaller center">
@@ -487,13 +494,138 @@ X((s, s, s))=0
 </section>
 <section class="slide level2 center">
 
+
+<img data-src="5.-Variable-aleatoria_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<section id="valor-esperado" class="slide level2 center">
+<h2>Valor esperado</h2>
+<p>El valor esperado de una variable aleatoria <span class="math inline">\(X\)</span> discreta, denotado por <span class="math inline">\(E(X)\)</span>, representa el centro de gravedad de la distribución de <span class="math inline">\(X\)</span>.</p>
+<p>Por ejemplo, si <span class="math inline">\(X\)</span> toma los valores <span class="math inline">\(\{0,1,2,3\}\)</span>, entonces</p>
+<p><span class="math display">\[
+E(X) = \sum_{k=0}^3 k\ \mathrm{P}(X = k)\]</span> <span class="math display">\[= 0\ \mathrm{P}(X = 0) + 1\ \mathrm{P}(X = 1) + 2\ \mathrm{P}(X = 2) + 3\ \mathrm{P}(X = 3)
+\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p>En general,</p>
+<p><span class="math display">\[
+E(X) =\sum_{k=0}^n k\ f_X(k)
+\]</span></p>
+<p>Note que entonces <span class="math inline">\(E(X)\)</span> es el promedio de los valores que puede tomar <span class="math inline">\(X\)</span> ponderados por las probabilidades de cada uno de esos valores.</p>
+</section>
+<section id="propiedades-2" class="slide level2 center">
+<h2>Propiedades</h2>
+<ul>
+<li class="fragment"><p>La media muestral tiende a <span class="math inline">\(E(X)\)</span> a medida que aumenta el tamaño de la muestra.</p></li>
+<li class="fragment"><p>El valor esperado es <strong>lineal</strong>: <span class="math inline">\(E(aX + b) = aE(X) + b\)</span></p></li>
+</ul>
+</section>
+<section id="ejemplo-3" class="slide level2 center">
+<h2>Ejemplo</h2>
+<p>Sea <span class="math inline">\(X\)</span> la variable aleatoria que representa el resultado de lanzar un dado. Es decir, toma los valores <span class="math inline">\(k=1, 2, \ldots, 6\)</span>, cada uno con probabilidad <span class="math inline">\(f_X(k) = \frac{1}{6}\)</span>. El valor esperado de <span class="math inline">\(X\)</span> es:</p>
+<p><span class="math display">\[
+E(X) = \sum_{k=1}^6 k\ f_X(k) =
+\]</span> <span class="math display">\[
+= 1\ \frac{1}{6} + 2\ \frac{1}{6} + 3\ \frac{1}{6} + 4\ \frac{1}{6} + 5\ \frac{1}{6} + 6\ \frac{1}{6}
+\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">\[
+=\frac{1}{6}(1+2+3+4+5+6) = \frac{1}{6}21=\frac{21}{6} = 3.5
+\]</span></p>
+<p>Además, pondremos a prueba la propiedad de la media. A continuación se presentan los resultados obtenidos de lanzar un dado diez veces:</p>
 <div class="cell">
-<div class="cell-output-display">
-<p><img data-src="5.-Variable-aleatoria_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 4 1 2 5 3 6 2 3 3</code></pre>
 </div>
 </div>
-<p><img src="logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<p>Calcule ahora, el promedio de los dos primeros valores, luego el de los tres primeros, a continuación el de los cuatro primeros, y así sucesivamente hasta calcular el promedio del los 10 primeros valores, es decir, todos.</p>
+</section>
+<section class="slide level2 center">
+
+<p>El resultado es el siguiente:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1.000000 2.500000 2.000000 2.000000 2.600000 2.666667 3.142857 3.000000
+ [9] 3.000000 3.000000</code></pre>
+</div>
+</div>
+<p>Observe que a medida que se agregan más lanzamientos del dado al promedio, éste se va acercando al valore esperado (3.5). Si se calcula el promedio de 100 lanzamientos aleatorios, se obtiene:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.52</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<p>con mil lanzamientos…</p>
+
+<img data-src="5.-Variable-aleatoria_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2 center">
+
+<p>Entonces concluimos que el valor esperado de <span class="math inline">\(X\)</span> es ese “promedio en el infinito” de la variable aleatoria.</p>
+</section>
+<section id="varianza" class="slide level2 small center">
+<h2>Varianza</h2>
+<p><span class="math inline">\(\newcommand{\Var}{\mathrm{Var}}\)</span> Así como la media muestral tiende al valor esperado <span class="math inline">\(E(X)\)</span>, la varianza muestral también tiende a un parámetro de la variable aleatoria, puntualmente a la <strong>varianza</strong> de la variable aleatoria: <span class="math inline">\(\Var(X)\)</span>. Se define así:</p>
+<p><span class="math display">\[
+\operatorname{Var}(X) = \sum_{k=0}^n (k - E(X))^2 f_X(k)
+\]</span></p>
+<p>¿Qué similitudes identifica con la fórmula del valor esperado?</p>
+<p>¿Qué similitudes identifica con la fórmula de la varianza muestral?</p>
+</section>
+<section id="propiedades-3" class="slide level2 center">
+<h2>Propiedades</h2>
+<ul>
+<li class="fragment"><span class="math inline">\(\Var(X) = E(X^2) - E(X)^2\)</span></li>
+<li class="fragment"><span class="math inline">\(\Var(X) \geq 0\)</span></li>
+<li class="fragment"><span class="math inline">\(\Var(a) = 0\)</span></li>
+<li class="fragment"><span class="math inline">\(\Var(aX + b) = a^2\Var(X)\)</span></li>
+</ul>
+</section>
+<section id="ejemplo-4" class="slide level2 center">
+<h2>Ejemplo</h2>
+<p>Sea <span class="math inline">\(X\)</span> la variable aleatoria que representa el resultado de lanzar un dado. Es decir, toma los valores <span class="math inline">\(k=1, 2, \ldots, 6\)</span>, cada uno con probabilidad <span class="math inline">\(f_X(k) = \frac{1}{6}\)</span>. Sabiendo que <span class="math inline">\(E(X)=3.5\)</span>, la varianza de <span class="math inline">\(X\)</span> es:</p>
+<p><span class="math display">\[
+\operatorname{Var}(X) = \sum_{k=1}^6 (k - 3.5)^2\ \frac{1}{6}
+\]</span> <span class="math display">\[
+= (1 - 3.5)^2\frac{1}{6} +(2 - 3.5)^2\frac{1}{6} + \cdots + (6 - 3.5)^2\frac{1}{6}
+\]</span></p>
+<p><span class="math display">\[
+= \frac{1}{6}\left[(1 - 3.5)^2 + \cdots + (6 - 3.5)^2\right]
+\]</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">\[
+= \frac{1}{6}17.5 = 2.91\bar{6}
+\]</span></p>
+</section>
+<section id="convergencia" class="slide level2 center">
+<h2>Convergencia</h2>
+<p>De la misma manera en que se hizo con el valor esperado, verificaremos que la varianza muestral se acerca cada vez más a la varianza de la variable aleatoria a medida que se lanza más veces el dado:</p>
+
+<img data-src="5.-Variable-aleatoria_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="algunas-distribuciones-discretas" class="slide level2 center">
+<h2>Algunas distribuciones discretas</h2>
+<p>Existen algunos <em>tipos</em> (distribuciones) de variables aleatorias que se encuentran con frecuencia. Por tanto, es útil darles nombre y estudiar sus propiedades como valor esperado y varianza. Los ejemplos del lanzamiento de un dado o de una moneda, corresponden a la primera distribución.</p>
+</section>
+<section id="distribución-uniforme-discreta" class="slide level2 center">
+<h2>Distribución uniforme discreta</h2>
+<p>Si todos los posibles resultados de una variable aleatoria tienen la misma probabilidad de ocurrir, se dice que <strong>la variable aleatoria sigue una distribución uniforme discreta</strong>.</p>
+<p>Por ejemplo, el lanzamiento de una moneda tiene 2 opciones, cara (0) y sello (1), ambas con probabilidad 0.5. El lanzamiento de un dado tiene 6 opciones, del 1 al 6, cada una con probabilidad <span class="math inline">\(\frac{1}{6}\)</span>.</p>
+</section>
+<section id="propiedades-4" class="slide level2 center">
+<h2>Propiedades</h2>
+<p>Si <span class="math inline">\(X\)</span> es variable aleatoria con distribución uniforme discreta compuesta por <span class="math inline">\(K\)</span> categorías, entonces:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(f_X(k) = \frac{1}{K}\)</span> para <span class="math inline">\(k = 1,\ldots,K\)</span>.</li>
+<li class="fragment"><span class="math inline">\(E(X) = \sum_{k=1}^K k\ f_X(k) = \sum_{k=1}^K \frac{k}{K} = \frac{K+1}{2}\)</span></li>
+<li class="fragment"><span class="math inline">\(\operatorname{Var}(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}\)</span> <span class="math inline">\(\quad\quad=\frac{K^2-1}{12}\)</span></li>
+</ul>
+
+<img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
 </section>

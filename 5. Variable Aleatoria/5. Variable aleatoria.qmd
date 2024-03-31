@@ -308,7 +308,7 @@ $\newcommand{\Var}{\mathrm{Var}}$
 Así como la media muestral tiende al valor esperado $E(X)$, la varianza muestral también tiende a un parámetro de la variable aleatoria, puntualmente a la **varianza** de la variable aleatoria: $\Var(X)$. Se define así:
 
 $$
-\Var(X) = \sum_{k=0}^n (k - E(X))^2 f_X(k)
+\operatorname{Var}(X) = \sum_{k=0}^n (k - E(X))^2 f_X(k)
 $$
 
 
@@ -330,7 +330,7 @@ $$
 Sea $X$ la variable aleatoria que representa el resultado de lanzar un dado. Es decir, toma los valores $k=1, 2, \ldots, 6$, cada uno con probabilidad $f_X(k) = \frac{1}{6}$. Sabiendo que  $E(X)=3.5$, la varianza de $X$ es:
 
 $$
-\Var(X) = \sum_{k=1}^6 (k - 3.5)^2\ \frac{1}{6}
+\operatorname{Var}(X) = \sum_{k=1}^6 (k - 3.5)^2\ \frac{1}{6}
 $$
 $$
 = (1 - 3.5)^2\frac{1}{6} +(2 - 3.5)^2\frac{1}{6} + \cdots + (6 - 3.5)^2\frac{1}{6}
@@ -360,21 +360,12 @@ plot(x_var,type = "l",xlab = "# Lanzamientos",
 abline(h = 2.916667,lty = 2,col = "gray")
 ```
 
-## Algunas distribuciones discretas
+# Referencias{.center}
 
-Existen algunos *tipos* (distribuciones) de variables aleatorias que se encuentran con frecuencia. Por tanto, es útil darles nombre y estudiar sus propiedades como valor esperado y varianza. Los ejemplos del lanzamiento de un dado o de una moneda, corresponden a la primera distribución.
+-Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558
 
-## Distribución uniforme discreta
+- Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley & Sons.
 
-Si todos los posibles resultados de una variable aleatoria tienen la misma probabilidad de ocurrir, se dice que **la variable aleatoria sigue una distribución uniforme discreta**. 
+-Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
 
-Por ejemplo, el lanzamiento de una moneda tiene 2 opciones, cara (0) y sello (1), ambas con probabilidad 0.5. El lanzamiento de un dado tiene 6 opciones, del 1 al 6, cada una con probabilidad $\frac{1}{6}$.
-
-## Propiedades
-
-Si $X$ es variable aleatoria con distribución uniforme discreta compuesta por $K$ categorías, entonces:
-
-- $f_X(k) = \frac{1}{K}$ para $k = 1,\ldots,K$.
-- $E(X) = \sum_{k=1}^K k\ f_X(k) = \sum_{k=1}^K \frac{k}{K} = \frac{K+1}{2}$
-- $\Var(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}$
-$\quad\quad=\frac{K^2-1}{12}$
+-Peña, D. (2014). Fundamentos de estadística. Alianza editorial.
