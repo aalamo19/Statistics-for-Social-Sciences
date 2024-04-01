@@ -374,7 +374,7 @@ $$P(X=x)=0, \quad \text{ para todo } x \in \mathbb{R} $$
 
 
 
-## Ejemplo 
+## Ejemplo{.smaller} 
 
 Consideremos la variable aleatoria $X :=$ "estatura en metros de los estudiantes del curso de estadística social fundamental". Suponiendo que sigue una distribución de probabilidad específica, la probabilidad de que algún estudiante mida entre 1.55m y 1.63m está dada por la siguiente área:
 
@@ -387,7 +387,9 @@ polygon(x = c(1.55,grid_p,1.63), y = c(0,dnorm(grid_p,mean=1.6,sd=0.05),0), col 
 lines(grid,dnorm(grid,mean=1.6,sd=0.05),type="l",lwd=2)
 ```
 
-La probabilidad sería
+##
+
+La probabilidad de que algún estudiante mida entre 1.55m y 1.63m sería
 
 ```{r prob}
 pnorm(1.63,mean=1.6,sd=0.05)-pnorm(1.55,mean=1.6,sd=0.05)
@@ -398,11 +400,11 @@ pnorm(1.63,mean=1.6,sd=0.05)-pnorm(1.55,mean=1.6,sd=0.05)
 Al igualque en el caso discreto, en el caso continuo la función de distribución ($F_X$) es aquella que calcula la probabilidad acumulada hasta un punto $x$.
 Describe la probabilidad de que una variable aleatoria real $X$ sujeta a cierta distribución de probabilidad se sitúe en la zona de valores menores o iguales a $x$. También se denota $F_X(x)$
 
-## Ejemplo 
+## Ejemplo{.smaller}
 
 Siguiendo con el ejemplo anterior, calculemos la probabilidad acumulada hasta la estatura 1.61m, es decir, la probabilidad de que algún estudiante tenga esta estatura o menos.
 
-```{r area-curva}
+```{r dist-curva}
 #función de distribucion
 
 grid <- seq(from =1.45, to = 1.75, len = 1000)
@@ -411,19 +413,21 @@ abline(v = 1.61, col = "red", lty = 2,lwd=2)
 
 ```
 
-Así, la probabilidad es:
+##
+
+Así, la probabilidad de que algún estudiante mida 1.61m o menos es:
 
 ```{r prob_dist}
 pnorm(1.61,mean=1.6,sd=0.05)
 ```
 
 
-# Referencias{.center}
+# Referencias
 
--Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558
+1.Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558
 
-- Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley & Sons.
+2.Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley & Sons.
 
--Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
+3.Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
 
--Peña, D. (2014). Fundamentos de estadística. Alianza editorial.
+4.Peña, D. (2014). Fundamentos de estadística. Alianza editorial.

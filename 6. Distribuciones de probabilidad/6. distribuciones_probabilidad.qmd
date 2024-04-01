@@ -1,5 +1,5 @@
 ---
-title: "Estadística Descriptiva Bivarada"
+title: "Distribuciones de probabilidad"
 author: "Andreina Alamo"
 format:
   revealjs:

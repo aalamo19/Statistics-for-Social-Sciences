@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="5. Variable aleatoria_files/libs/clipboard/clipboard.min.js"></script>
-<script src="5. Variable aleatoria_files/libs/quarto-html/tabby.min.js"></script>
-<script src="5. Variable aleatoria_files/libs/quarto-html/popper.min.js"></script>
-<script src="5. Variable aleatoria_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="5. Variable aleatoria_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="5. Variable aleatoria_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="5. Variable aleatoria_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="5. Variable aleatoria_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="6. distribuciones_probabilidad_files/libs/clipboard/clipboard.min.js"></script>
+<script src="6. distribuciones_probabilidad_files/libs/quarto-html/tabby.min.js"></script>
+<script src="6. distribuciones_probabilidad_files/libs/quarto-html/popper.min.js"></script>
+<script src="6. distribuciones_probabilidad_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="6. distribuciones_probabilidad_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="6. distribuciones_probabilidad_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="6. distribuciones_probabilidad_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="6. distribuciones_probabilidad_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Andreina Alamo">
-  <title>Variables Aleatorias</title>
+  <title>Estadística Descriptiva Bivarada</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="5. Variable aleatoria_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="5. Variable aleatoria_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="6. distribuciones_probabilidad_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="6. distribuciones_probabilidad_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,12 +30,12 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="5. Variable aleatoria_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="6. distribuciones_probabilidad_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="logo.css">
-  <link href="5. Variable aleatoria_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="5. Variable aleatoria_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="5. Variable aleatoria_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="5. Variable aleatoria_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="6. distribuciones_probabilidad_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="6. distribuciones_probabilidad_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="6. distribuciones_probabilidad_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="6. distribuciones_probabilidad_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -326,7 +326,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Variables Aleatorias</h1>
+  <h1 class="title">Estadística Descriptiva Bivarada</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -337,327 +337,38 @@ Andreina Alamo
 </div>
 
 </section>
-<section id="función-matemática" class="slide level2 center">
-<h2>Función Matemática</h2>
-<p>Una función matemática es una regla que asigna a cada elemento de un conjunto de entrada exactamente un elemento de un conjunto de salida.</p>
-<p align="center">
-<img src="funcion.png" width="300">
-</p>
+<section id="algunas-distribuciones-discretas" class="slide level2 center">
+<h2>Algunas distribuciones discretas</h2>
+<p>Existen algunos <em>tipos</em> (distribuciones) de variables aleatorias que se encuentran con frecuencia. Por tanto, es útil darles nombre y estudiar sus propiedades como valor esperado y varianza. Los ejemplos del lanzamiento de un dado o de una moneda, corresponden a la primera distribución.</p>
 </section>
-<section id="notación" class="slide level2 center">
-<h2>Notación</h2>
-<p>Una función <span class="math inline">\(f\)</span> se representa como:</p>
-<p><span class="math display">\[ \begin{align*}
-  f : X &amp;\rightarrow Y \\
-    x &amp;\rightarrow f(x)
-\end{align*} \]</span></p>
-<p>Donde:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(X\)</span> es el conjunto de entrada (dominio).</li>
-<li class="fragment"><span class="math inline">\(Y\)</span> es el conjunto de salida (contradominio).</li>
-</ul>
-</section>
-<section id="ejemplo" class="slide level2 center">
-<h2>Ejemplo</h2>
-<p>Considera la función <span class="math inline">\(f(x) = x^2\)</span>. El conjunto de entrada son los números reales <span class="math inline">\(\mathbb{R}\)</span> y el de salida los reales positivos. Esta función se denota así:</p>
-<p><span class="math display">\[ \begin{align*}
-  f : X &amp;\longmapsto Y \\
-    x &amp;\longmapsto x^2
-\end{align*} \]</span></p>
-</section>
-<section id="función-cuadrática" class="slide level2 center">
-<h2>Función cuadrática</h2>
-
-<img data-src="5.-Variable-aleatoria_files/figure-revealjs/funcion%20cuadratica-1.png" width="960" class="r-stretch"></section>
-<section id="introducción" class="slide level2 smaller center">
-<h2>Introducción</h2>
-<ul>
-<li class="fragment"><p>Para el desarrollo de técnicas de inferencia estadística, es conveniente relacionar directamente los resultados de un experimento aleatorio con números reales, ya que con tal asociación el análisis de las características de interés es más productivo.</p></li>
-<li class="fragment"><p>Dependiendo de si la variable resultante es <em>discreta</em> (solo pueden adoptar un número finito o una infinidad enumerable de valores) o <em>continua</em> (los valores están asociados con una escala continua de medición), es posible describir su comportamiento probabilístico a partir de la función de probabilidad o de la función de densidad, respectivamente.</p></li>
-<li class="fragment"><p>Además, por medio de estas funciones es posible calcular todo tipo de medidas (e.g., tendencia central) a nivel poblacional. En este contexto, tales medidas se denominan parámetros.</p></li>
-</ul>
-</section>
-<section id="variable-aleatoria-v.a." class="slide level2 center">
-<h2>Variable aleatoria (v.a.)</h2>
-<p>Una variable aleatoria es una función que asigna un valor, usualmente numérico, al resultado de un experimento aleatorio.</p>
-<p>Así una variable aleatoria <span class="math inline">\(X\)</span> es una función cuyo dominio es <span class="math inline">\(\Omega\)</span> y recorrido <span class="math inline">\(\mathcal{R}\)</span>, que asigna un único número real a cada resultado del espacio muestral <span class="math inline">\(\Omega\)</span> de un experimento aleatorio.</p>
-<p><span class="math display">\[ \begin{align*}
-  f : \Omega &amp;\longmapsto \mathbb{R} \\
-    \omega  &amp;\longmapsto X(\omega)
-\end{align*} \]</span></p>
-</section>
-<section class="slide level2 center">
-
-<p>Las variables aleatorias pueden ser de dos tipos dependiendo su recorrido: <strong>discretas</strong> o <strong>continuas</strong>.</p>
-<ol type="1">
-<li class="fragment"><p><strong>Discretas:</strong> Cuando su recorrido es numerable. Un buen ejemplo de variables discretas son los conteos, como el número de casos incidentes de SarsCov2 en un mes determinado.</p></li>
-<li class="fragment"><p><strong>Continuas:</strong> Cuando su recorrido es no numerable, es decir cuando entre dos valores de la variable hay infinitos posibles valores de ésta, como por ejemplo la longitud(m) y la temperatura <span class="math inline">\(\left({ }^{\circ} \mathrm{C}\right)\)</span>.</p></li>
-</ol>
-</section>
-<section id="notación-1" class="slide level2 center">
-<h2>Notación</h2>
-<p>Las variables aleatorias se simbolizan, generalmente, con letras mayúsculas <span class="math inline">\(X, Y\)</span> y <span class="math inline">\(Z\)</span>. Se utiliza su correspondiente letra minúscula (en este caso <span class="math inline">\(x, y, z\)</span> ) para designar sus posibles valores. Por ejemplo, si <span class="math inline">\(X\)</span> representa la v.a. “número de caras obtenido” que pueden resultar al lanzar una moneda tres veces consecutivas, entonces, sus valores son <span class="math inline">\(x=0,1,2,3\)</span>.</p>
-</section>
-<section id="ejemplo-1" class="slide level2 center">
-<h2>Ejemplo 1</h2>
-<p>Al arrojar dos dados, sabemos que la suma <span class="math inline">\(X\)</span> de los puntos que caen hacia arriba debe ser un número entero entre 2 y 12, pero no podemos predecir que valor de <span class="math inline">\(X\)</span> que aparecerá en el siguiente ensayo, por lo que decimos que <span class="math inline">\(X\)</span> es una variable aleatoria que toma valores entre 2 y 12.</p>
-</section>
-<section id="ejemplo-2" class="slide level2 center">
-<h2>Ejemplo 2</h2>
-<ul>
-<li class="fragment">Experimento aleatorio: lanzar tres veces una moneda al aire.</li>
-<li class="fragment"><span class="math inline">\(X\)</span>: “número de caras obtenido” al final de los tres lanzamientos.</li>
-</ul>
-<div class="fragment">
-<p>Así:</p>
-<p><span class="math display">\[
-\Omega=\{(c, c, c),(c, c, s),(c, s, c),(c, s, s),(s, c, c)
-\]</span></p>
-<p><span class="math display">\[
-\quad\quad,(s, c, s),(s, s, c),(s, s, s)\}
-\]</span></p>
-</div>
-</section>
-<section class="slide level2 center">
-
-<p>y <span class="math inline">\(X\)</span> es una v.a. discreta con valores: <span class="math display">\[
-X((c, c, c))=3, X((c, c, s))=2, X((c, s, c))=2, X((s, c, c))=2, \\
-X((s, s, c))=1, X((s, c, s))=1, X((c, s, s))=1 \mathrm{y}
-X((s, s, s))=0
-\]</span></p>
-</section>
-<section id="variable-aleatoria-discreta" class="slide level2 center">
-<h2>Variable aleatoria discreta</h2>
-</section>
-<section id="función-de-probabilidad" class="slide level2 center">
-<h2>Función de probabilidad</h2>
-<p>La <strong>función de probabilidad</strong> o <strong>función másica de probabilidad</strong> de una variable aleatoria discreta describe teóricamente la forma en que varían los resultados de un experimento aleatorio. Intuitivamente se trataría de una lista de los resultados posibles de un experimento con las probabilidades que se esperarían ver asociadas con cada resultado.</p>
-<p>Es decir, nos da todas las probabilidades de todos los posibles resultados que podrían obtenerse cuando se realiza un experimento aleatorio.</p>
-<p>La función de densidad de una variable aleatoria <span class="math inline">\(X\)</span> se denota <span class="math inline">\(f_X (x)\)</span>.</p>
+<section id="distribución-uniforme-discreta" class="slide level2 center">
+<h2>Distribución uniforme discreta</h2>
+<p>Si todos los posibles resultados de una variable aleatoria tienen la misma probabilidad de ocurrir, se dice que <strong>la variable aleatoria sigue una distribución uniforme discreta</strong>.</p>
+<p>Por ejemplo, el lanzamiento de una moneda tiene 2 opciones, cara (0) y sello (1), ambas con probabilidad 0.5. El lanzamiento de un dado tiene 6 opciones, del 1 al 6, cada una con probabilidad <span class="math inline">\(\frac{1}{6}\)</span>.</p>
 </section>
 <section id="propiedades" class="slide level2 center">
 <h2>Propiedades</h2>
-<p>Cualquier función de probabilidad satisface que:</p>
+<p>Si <span class="math inline">\(X\)</span> es variable aleatoria con distribución uniforme discreta compuesta por <span class="math inline">\(K\)</span> categorías, entonces:</p>
 <ul>
-<li class="fragment"><span class="math inline">\(f\left(x_k\right) \geqslant 0\)</span> para todo valor <span class="math inline">\(x_k\)</span> de <span class="math inline">\(X\)</span>.</li>
-<li class="fragment"><span class="math inline">\(\sum_k f\left(x_k\right)=1\)</span>.</li>
+<li class="fragment"><span class="math inline">\(f_X(k) = \frac{1}{K}\)</span> para <span class="math inline">\(k = 1,\ldots,K\)</span>.</li>
+<li class="fragment"><span class="math inline">\(E(X) = \sum_{k=1}^K k\ f_X(k) = \sum_{k=1}^K \frac{k}{K} = \frac{K+1}{2}\)</span></li>
+<li class="fragment"><span class="math inline">\(\operatorname{Var}(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}\)</span> <span class="math inline">\(\quad\quad=\frac{K^2-1}{12}\)</span></li>
 </ul>
 </section>
-<section id="ejemplo-2-1" class="slide level2 smaller center">
-<h2>Ejemplo 2</h2>
-<p>Continuando con el ejemplo anterior, se tiene que la función de densidad de la variable es: <span class="math display">\[
-\begin{aligned}
-&amp; f_X(0)=\mathrm{P}(X=0)=\operatorname{Pr}((s, s, s))=\frac{1}{8}=0.125, \\
-&amp; f_X(1)=\mathrm{P}(X=1)=\operatorname{Pr}(\{(c, s, s),(s, c, s),(s, s, c)\})=\frac{3}{8}=0.375, \\
-&amp; f_X(2)=\mathrm{P}(X=2)=\operatorname{Pr}(\{(s, c, c),(c, c, s),(c, s, c)\})=\frac{3}{8}=0.375, \\
-&amp; f_X(3)=\mathrm{P}(X=3)=\operatorname{Pr}((c, c, c))=\frac{1}{8}=0.125 .
-\end{aligned}
-\]</span></p>
-<p>Además, se observa que:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\sum_{k=1}^4 f_X\left(x_k\right) &amp;= f_X(0)+f_X(1)+f_X(2)+f_X(3) \\ &amp;=0.125+0.375+0.375+0.125=1
-\end{aligned}
-\]</span></p>
-<p>Con <span class="math inline">\(x_1=0, x_2=1, x_3=2 \text { у } x_4=3\)</span>.</p>
-</section>
-<section class="slide level2 center">
-
-<p>La siguiente figura presenta el gráfico de la función de densidad la variable <span class="math inline">\(X\)</span></p>
-
-<img data-src="5.-Variable-aleatoria_files/figure-revealjs/ejemplo%20funcion-1.png" width="960" class="r-stretch"></section>
-<section id="función-de-distribución" class="slide level2 center">
-<h2>Función de distribución</h2>
-<p>La función de distribución (<span class="math inline">\(F_X\)</span>) es aquella que calcula la probabilidad acumulada hasta un punto <span class="math inline">\(x\)</span>. Describe la probabilidad de que una variable aleatoria <span class="math inline">\(X\)</span> sujeta a cierta ley de distribución de probabilidad se sitúe en la zona de valores menores o iguales a <span class="math inline">\(x\)</span>.</p>
-<p align="center">
-<img src="distribucion.png" width="400">
-</p>
-</section>
-<section id="propiedades-1" class="slide level2 center">
-<h2>Propiedades</h2>
-<p>Una función de distribución <span class="math inline">\(F_X\)</span> de una v.a. discreta <span class="math inline">\(X\)</span> satisface que:</p>
-<ul>
-<li class="fragment"><p><span class="math inline">\(0 \leq F_X(x) \leq 1\)</span>.</p></li>
-<li class="fragment"><p><span class="math display">\[\mathrm{P}(X&gt;x)=1-F_X(x) \text { y } \mathrm{P}(X \geq x)=1-F_X\left(x^{-}\right) .\]</span> donde <span class="math inline">\(x^{-}\)</span>representa el máximo valor que puede asumir <span class="math inline">\(X\)</span> estrictamente menor que <span class="math inline">\(x\)</span>.</p></li>
-</ul>
-</section>
-<section id="ejemplo-2-2" class="slide level2 smaller center">
-<h2>Ejemplo 2</h2>
-<p>Volviendo al ejemplo 2, se tiene que: <span class="math display">\[
-\begin{aligned}
-&amp; F_X(0)=\mathrm{P}(X \leq 0)=f_X(0)=\frac{1}{8}=0.125 \\
-&amp; F_X(1)=\mathrm{P}(X \leq 1)=f_X(0)+f_X(1)=\frac{1}{8}+\frac{3}{8}=\frac{4}{8}=\frac{1}{2}=0.5 \\
-&amp; F_X(2)=\mathrm{P}(X \leq 2)=f_X(0)+f_X(1)+f_X(2)=\frac{1}{8}+\frac{3}{8}+\frac{3}{8}=\frac{7}{8}=0.875 \\
-&amp; F_X(3)=\mathrm{P}(X \leq 3)=f_X(0)+f_X(1)+f_X(2)+f_X(3)=\frac{1}{8}+\frac{3}{8}+\frac{3}{8}+\frac{1}{8}=\frac{8}{8}=1 .
-\end{aligned}
-\]</span></p>
-</section>
-<section class="slide level2 center">
-
-
-<img data-src="5.-Variable-aleatoria_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
-<section id="valor-esperado" class="slide level2 center">
-<h2>Valor esperado</h2>
-<p>El valor esperado de una variable aleatoria <span class="math inline">\(X\)</span> discreta, denotado por <span class="math inline">\(E(X)\)</span>, representa el centro de gravedad de la distribución de <span class="math inline">\(X\)</span>.</p>
-<p>Por ejemplo, si <span class="math inline">\(X\)</span> toma los valores <span class="math inline">\(\{0,1,2,3\}\)</span>, entonces</p>
-<p><span class="math display">\[
-E(X) = \sum_{k=0}^3 k\ \mathrm{P}(X = k)\]</span> <span class="math display">\[= 0\ \mathrm{P}(X = 0) + 1\ \mathrm{P}(X = 1) + 2\ \mathrm{P}(X = 2) + 3\ \mathrm{P}(X = 3)
-\]</span></p>
-</section>
-<section class="slide level2 center">
-
-<p>En general,</p>
-<p><span class="math display">\[
-E(X) =\sum_{k=0}^n k\ f_X(k)
-\]</span></p>
-<p>Note que entonces <span class="math inline">\(E(X)\)</span> es el promedio de los valores que puede tomar <span class="math inline">\(X\)</span> ponderados por las probabilidades de cada uno de esos valores.</p>
-</section>
-<section id="propiedades-2" class="slide level2 center">
-<h2>Propiedades</h2>
-<ul>
-<li class="fragment"><p>La media muestral tiende a <span class="math inline">\(E(X)\)</span> a medida que aumenta el tamaño de la muestra.</p></li>
-<li class="fragment"><p>El valor esperado es <strong>lineal</strong>: <span class="math inline">\(E(aX + b) = aE(X) + b\)</span></p></li>
-</ul>
-</section>
-<section id="ejemplo-3" class="slide level2 center">
-<h2>Ejemplo</h2>
-<p>Sea <span class="math inline">\(X\)</span> la variable aleatoria que representa el resultado de lanzar un dado. Es decir, toma los valores <span class="math inline">\(k=1, 2, \ldots, 6\)</span>, cada uno con probabilidad <span class="math inline">\(f_X(k) = \frac{1}{6}\)</span>. El valor esperado de <span class="math inline">\(X\)</span> es:</p>
-<p><span class="math display">\[
-E(X) = \sum_{k=1}^6 k\ f_X(k) =
-\]</span> <span class="math display">\[
-= 1\ \frac{1}{6} + 2\ \frac{1}{6} + 3\ \frac{1}{6} + 4\ \frac{1}{6} + 5\ \frac{1}{6} + 6\ \frac{1}{6}
-\]</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">\[
-=\frac{1}{6}(1+2+3+4+5+6) = \frac{1}{6}21=\frac{21}{6} = 3.5
-\]</span></p>
-<p>Además, pondremos a prueba la propiedad de la media. A continuación se presentan los resultados obtenidos de lanzar un dado diez veces:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 4 1 2 5 3 6 2 3 3</code></pre>
-</div>
-</div>
-<p>Calcule ahora, el promedio de los dos primeros valores, luego el de los tres primeros, a continuación el de los cuatro primeros, y así sucesivamente hasta calcular el promedio del los 10 primeros valores, es decir, todos.</p>
-</section>
-<section class="slide level2 center">
-
-<p>El resultado es el siguiente:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 1.000000 2.500000 2.000000 2.000000 2.600000 2.666667 3.142857 3.000000
- [9] 3.000000 3.000000</code></pre>
-</div>
-</div>
-<p>Observe que a medida que se agregan más lanzamientos del dado al promedio, éste se va acercando al valore esperado (3.5). Si se calcula el promedio de 100 lanzamientos aleatorios, se obtiene:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.52</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2 center">
-
-<p>con mil lanzamientos…</p>
-
-<img data-src="5.-Variable-aleatoria_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2 center">
-
-<p>Entonces concluimos que el valor esperado de <span class="math inline">\(X\)</span> es ese “promedio en el infinito” de la variable aleatoria.</p>
-</section>
-<section id="varianza" class="slide level2 small center">
-<h2>Varianza</h2>
-<p><span class="math inline">\(\newcommand{\Var}{\mathrm{Var}}\)</span> Así como la media muestral tiende al valor esperado <span class="math inline">\(E(X)\)</span>, la varianza muestral también tiende a un parámetro de la variable aleatoria, puntualmente a la <strong>varianza</strong> de la variable aleatoria: <span class="math inline">\(\Var(X)\)</span>. Se define así:</p>
-<p><span class="math display">\[
-\operatorname{Var}(X) = \sum_{k=0}^n (k - E(X))^2 f_X(k)
-\]</span></p>
-<p>¿Qué similitudes identifica con la fórmula del valor esperado?</p>
-<p>¿Qué similitudes identifica con la fórmula de la varianza muestral?</p>
-</section>
-<section id="propiedades-3" class="slide level2 center">
-<h2>Propiedades</h2>
-<ul>
-<li class="fragment"><span class="math inline">\(\Var(X) = E(X^2) - E(X)^2\)</span></li>
-<li class="fragment"><span class="math inline">\(\Var(X) \geq 0\)</span></li>
-<li class="fragment"><span class="math inline">\(\Var(a) = 0\)</span></li>
-<li class="fragment"><span class="math inline">\(\Var(aX + b) = a^2\Var(X)\)</span></li>
-</ul>
-</section>
-<section id="ejemplo-4" class="slide level2 center">
-<h2>Ejemplo</h2>
-<p>Sea <span class="math inline">\(X\)</span> la variable aleatoria que representa el resultado de lanzar un dado. Es decir, toma los valores <span class="math inline">\(k=1, 2, \ldots, 6\)</span>, cada uno con probabilidad <span class="math inline">\(f_X(k) = \frac{1}{6}\)</span>. Sabiendo que <span class="math inline">\(E(X)=3.5\)</span>, la varianza de <span class="math inline">\(X\)</span> es:</p>
-<p><span class="math display">\[
-\operatorname{Var}(X) = \sum_{k=1}^6 (k - 3.5)^2\ \frac{1}{6}
-\]</span> <span class="math display">\[
-= (1 - 3.5)^2\frac{1}{6} +(2 - 3.5)^2\frac{1}{6} + \cdots + (6 - 3.5)^2\frac{1}{6}
-\]</span></p>
-<p><span class="math display">\[
-= \frac{1}{6}\left[(1 - 3.5)^2 + \cdots + (6 - 3.5)^2\right]
-\]</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">\[
-= \frac{1}{6}17.5 = 2.91\bar{6}
-\]</span></p>
-</section>
-<section id="convergencia" class="slide level2 center">
-<h2>Convergencia</h2>
-<p>De la misma manera en que se hizo con el valor esperado, verificaremos que la varianza muestral se acerca cada vez más a la varianza de la variable aleatoria a medida que se lanza más veces el dado:</p>
-
-<img data-src="5.-Variable-aleatoria_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section id="variable-aleatoria-continua" class="slide level2 center">
 <h2>Variable aleatoria continua</h2>
 </section>
 <section class="slide level2 center">
 
 </section>
-<section>
-<section id="función-de-densidad" class="title-slide slide level1 center">
-<h1>Función de densidad</h1>
-<p>La <strong>función de densidad</strong> de una variable aleatoria continua es similar a como definimos a la función de probabilidad anteriormente para variables discretas, también describe teóricamente la forma en que varían los resultados de un experimento aleatorio y se denota <span class="math inline">\(f_X(x)\)</span>.</p>
-<p>Sin embargo, cuando la variable aleatoria es continua hay infinitos valores posibles de la variable y por ende, la probabilidad de obtener un valor puntual es cero, esto es:</p>
-<p><span class="math display">\[P(X=x)=0, \quad \text{ para todo } x \in \mathbb{R} \]</span></p>
-</section>
-<section id="ejemplo-5" class="slide level2 smaller center">
-<h2>Ejemplo</h2>
-<p>Consideremos la variable aleatoria <span class="math inline">\(X :=\)</span> “estatura en metros de los estudiantes del curso de estadística social fundamental”. Suponiendo que sigue una distribución de probabilidad específica, la probabilidad de que algún estudiante mida entre 1.55m y 1.63m está dada por la siguiente área:</p>
-
-<img data-src="5.-Variable-aleatoria_files/figure-revealjs/area-curva-1.png" width="960" class="r-stretch"></section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<p>La probabilidad de que algún estudiante mida entre 1.55m y 1.63m sería</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5670916</code></pre>
-</div>
-</div>
-</section>
-<section id="función-de-distribución-1" class="slide level2 center">
-<h2>Función de distribución</h2>
-<p>Al igualque en el caso discreto, en el caso continuo la función de distribución (<span class="math inline">\(F_X\)</span>) es aquella que calcula la probabilidad acumulada hasta un punto <span class="math inline">\(x\)</span>. Describe la probabilidad de que una variable aleatoria real <span class="math inline">\(X\)</span> sujeta a cierta distribución de probabilidad se sitúe en la zona de valores menores o iguales a <span class="math inline">\(x\)</span>. También se denota <span class="math inline">\(F_X(x)\)</span></p>
-</section>
-<section id="ejemplo-6" class="slide level2 smaller center">
-<h2>Ejemplo</h2>
-<p>Siguiendo con el ejemplo anterior, calculemos la probabilidad acumulada hasta la estatura 1.61m, es decir, la probabilidad de que algún estudiante tenga esta estatura o menos.</p>
-
-<img data-src="5.-Variable-aleatoria_files/figure-revealjs/dist-curva-1.png" width="960" class="r-stretch"></section>
-<section id="section-1" class="slide level2 center">
-<h2></h2>
-<p>Así, la probabilidad de que algún estudiante mida 1.61m o menos es:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5792597</code></pre>
-</div>
-</div>
-</section></section>
 <section id="referencias" class="title-slide slide level1 center">
 <h1>Referencias</h1>
-<p>1.Buitrago, L., &amp; Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558</p>
-<p>2.Cohen, B. H., &amp; Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley &amp; Sons.</p>
-<p>3.Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].</p>
-<p>4.Peña, D. (2014). Fundamentos de estadística. Alianza editorial.</p>
+<p>-Buitrago, L., &amp; Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558</p>
+<ul>
+<li class="fragment">Cohen, B. H., &amp; Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley &amp; Sons.</li>
+</ul>
+<p>-Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].</p>
+<p>-Peña, D. (2014). Fundamentos de estadística. Alianza editorial.</p>
 
 <img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
@@ -667,19 +378,19 @@ E(X) = \sum_{k=1}^6 k\ f_X(k) =
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="5. Variable aleatoria_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="6. distribuciones_probabilidad_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -874,44 +585,6 @@ E(X) = \sum_{k=1}^6 k\ f_X(k) =
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
