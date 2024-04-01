@@ -121,9 +121,9 @@ $$
 
 ---
 
-## Función de densidad
+## Función de probabilidad
 
-La **función de probabilidad** o **función de densidad** de una variable aleatoria discreta describe teóricamente la forma en que varían los resultados de un experimento aleatorio. Intuitivamente se trataría de una lista de los resultados posibles de un experimento con las probabilidades que se esperarían ver asociadas con cada resultado.
+La **función de probabilidad** o **función másica de probabilidad** de una variable aleatoria discreta describe teóricamente la forma en que varían los resultados de un experimento aleatorio. Intuitivamente se trataría de una lista de los resultados posibles de un experimento con las probabilidades que se esperarían ver asociadas con cada resultado.
 
 Es decir, nos da todas las probabilidades de todos los posibles resultados que podrían obtenerse cuando se realiza un experimento aleatorio.
 
@@ -175,7 +175,7 @@ segments(x0 = x, y0 = 0, x1 = x, y1 = fx, lwd = 2, col = "blueviolet")
 ## Función de distribución
 
 La función de distribución ($F_X$) es aquella que calcula la probabilidad acumulada hasta un punto $x$.
-Describe la probabilidad de que una variable aleatoria real $X$ sujeta a cierta ley de distribución de probabilidad se sitúe en la zona de valores menores o iguales a $x$.
+Describe la probabilidad de que una variable aleatoria $X$ sujeta a cierta ley de distribución de probabilidad se sitúe en la zona de valores menores o iguales a $x$.
 
 <p align="center">
 <img src="distribucion.png" width="400">
@@ -359,6 +359,64 @@ plot(x_var,type = "l",xlab = "# Lanzamientos",
      ylab = "Varianza muestral")
 abline(h = 2.916667,lty = 2,col = "gray")
 ```
+
+## Variable aleatoria continua
+
+---
+
+# Función de densidad
+
+La **función de densidad** de una variable aleatoria continua es similar a como definimos a la función de probabilidad anteriormente para variables discretas, también describe teóricamente la forma en que varían los resultados de un experimento aleatorio y se denota $f_X(x)$.
+
+Sin embargo, cuando la variable aleatoria es continua hay infinitos valores posibles de la variable y por ende, la probabilidad de obtener un valor puntual es cero, esto es:
+
+$$P(X=x)=0, \quad \text{ para todo } x \in \mathbb{R} $$
+
+
+
+## Ejemplo 
+
+Consideremos la variable aleatoria $X :=$ "estatura en metros de los estudiantes del curso de estadística social fundamental". Suponiendo que sigue una distribución de probabilidad específica, la probabilidad de que algún estudiante mida entre 1.55m y 1.63m está dada por la siguiente área:
+
+```{r area-curva}
+#función de densidad
+grid <- seq(from =1.45, to = 1.75, len = 1000)
+plot(grid,dnorm(grid,mean=1.6,sd=0.05),type="l",lwd=2,xlab="Estatura (m)",ylab="Densidad")
+grid_p <- grid[grid<1.63 & grid>1.55]
+polygon(x = c(1.55,grid_p,1.63), y = c(0,dnorm(grid_p,mean=1.6,sd=0.05),0), col = "mistyrose", border = "mistyrose")
+lines(grid,dnorm(grid,mean=1.6,sd=0.05),type="l",lwd=2)
+```
+
+La probabilidad sería
+
+```{r prob}
+pnorm(1.63,mean=1.6,sd=0.05)-pnorm(1.55,mean=1.6,sd=0.05)
+```
+
+## Función de distribución
+
+Al igualque en el caso discreto, en el caso continuo la función de distribución ($F_X$) es aquella que calcula la probabilidad acumulada hasta un punto $x$.
+Describe la probabilidad de que una variable aleatoria real $X$ sujeta a cierta distribución de probabilidad se sitúe en la zona de valores menores o iguales a $x$. También se denota $F_X(x)$
+
+## Ejemplo 
+
+Siguiendo con el ejemplo anterior, calculemos la probabilidad acumulada hasta la estatura 1.61m, es decir, la probabilidad de que algún estudiante tenga esta estatura o menos.
+
+```{r area-curva}
+#función de distribucion
+
+grid <- seq(from =1.45, to = 1.75, len = 1000)
+plot(grid,pnorm(grid,mean=1.6,sd=0.05),type="l",lwd=2,xlab="Estatura (m)",ylab="Densidad")
+abline(v = 1.61, col = "red", lty = 2,lwd=2)
+
+```
+
+Así, la probabilidad es:
+
+```{r prob_dist}
+pnorm(1.61,mean=1.6,sd=0.05)
+```
+
 
 # Referencias{.center}
 
