@@ -13,36 +13,170 @@ editor:
     wrap: 72
 ---
 
-## Algunas distribuciones discretas
+# Distribución de probabilidad
 
-Existen algunos *tipos* (distribuciones) de variables aleatorias que se encuentran con frecuencia. Por tanto, es útil darles nombre y estudiar sus propiedades como valor esperado y varianza. Los ejemplos del lanzamiento de un dado o de una moneda, corresponden a la primera distribución.
+Existen algunos *tipos* (distribuciones) de variables aleatorias que se
+encuentran con frecuencia. Por tanto, es útil darles nombre y estudiar
+sus propiedades como valor esperado y varianza. Dependiendo de la
+naturaleza de la variable existirán 2 tipos de distribuciones:
 
-## Distribución uniforme discreta
+-   Discretas
+-   Continuas
 
-Si todos los posibles resultados de una variable aleatoria tienen la misma probabilidad de ocurrir, se dice que **la variable aleatoria sigue una distribución uniforme discreta**. 
+# Algunas distribuciones discretas
 
-Por ejemplo, el lanzamiento de una moneda tiene 2 opciones, cara (0) y sello (1), ambas con probabilidad 0.5. El lanzamiento de un dado tiene 6 opciones, del 1 al 6, cada una con probabilidad $\frac{1}{6}$.
+## 1. Distribución uniforme discreta
+
+Si todos los posibles resultados de una variable aleatoria tienen la
+misma probabilidad de ocurrir, se dice que **la variable aleatoria sigue
+una distribución uniforme discreta**.
+
+Por ejemplo, el lanzamiento de una moneda tiene 2 opciones, cara (0) y
+sello (1), ambas con probabilidad 0.5. El lanzamiento de un dado tiene 6
+opciones, del 1 al 6, cada una con probabilidad $\frac{1}{6}$.
 
 ## Propiedades
 
-Si $X$ es variable aleatoria con distribución uniforme discreta compuesta por $K$ categorías, entonces:
+Si $X$ es variable aleatoria con distribución uniforme discreta
+compuesta por $K$ categorías, entonces:
 
-- $f_X(k) = \frac{1}{K}$ para $k = 1,\ldots,K$.
-- $E(X) = \sum_{k=1}^K k\ f_X(k) = \sum_{k=1}^K \frac{k}{K} = \frac{K+1}{2}$
-- $\operatorname{Var}(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}$
-$\quad\quad=\frac{K^2-1}{12}$
+-   $f_X(k) = \frac{1}{K}$ para $k = 1,\ldots,K$.
+-   $E(X) = \sum_{k=1}^K k\ f_X(k) = \sum_{k=1}^K \frac{k}{K} = \frac{K+1}{2}$
+-   $\operatorname{Var}(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}$
+    $\quad\quad=\frac{K^2-1}{12}$
 
----- 
+## 2. Distribución Binomial
 
-## Variable aleatoria continua
+Si estamos con un experimento con dos resultados posibles, que podemos llamar éxito y fracaso, donde la probabilidad de obtener un éxito es $p$ y repetimos el experimento $n$ veces, el número de éxitos obtenidos en $n$ ensayos es una **variable aleatoria con distribución binomial de parámetros $n$ y $p$**
 
----
-# Referencias{.center}
+## Propiedades
 
--Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558
+Si $X$ es variable aleatoria con distribución binomial con probabilidad de éxito $p$ y número de ensayos $n$, entonces:
 
-- Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley & Sons.
+-   $f_X(k) = \binom{n}{k} p\^k (1-p)\^{n-k}$
+-   $E(X) = np $
+-   $\operatorname{Var}(X) =  np(1-p) $
 
--Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
+## 3. Distribución de Poisson
+
+-   **Definición**: Número de eventos en un intervalo fijo de tiempo o
+    espacio cuando estos eventos ocurren con una tasa constante.
+-   **Función de Probabilidad**: ( P(X = k) =
+    \frac{\lambda^k e^{-\lambda}}{k!} )
+-   **Función de Distribución**: Complicada para expresar en forma
+    cerrada.
+-   **Esperanza**: ( E(X) = \lambda )
+-   **Varianza**: ( \text{Var}(X) = \lambda )
+-   **Ejemplo**: Número de llamadas recibidas en una central telefónica
+    en una hora.
+
+## Otras distribuciones
+
+-   
+
+# Distribuciones Continuas
+
+## 1. Distribución Normal
+
+-   **Definición**: Describe fenómenos naturales donde las observaciones
+    se agrupan en torno a un promedio.
+-   **Función de Densidad**: ( f(x) = \frac{1}{\sigma \sqrt{2\pi}}
+    e^{-^\frac{1}{2}(\frac{x-\mu}{\sigma})2} )
+-   **Función de Distribución**: ( \Phi(z) ) de tablas o software.
+-   **Esperanza**: ( E(X) = \mu )
+-   **Varianza**: ( \text{Var}(X) = \sigma\^2 )
+-   **Ejemplo**: Altura de individuos en una población.
+
+## 2. Distribución Gamma
+
+-   **Definición**: Tiempo hasta que ocurre el ( k )-ésimo evento en un
+    proceso de Poisson.
+-   **Función de Densidad**: ( f(x) =
+    \frac{\lambda^k x^{k-1} e^{-\lambda x}}{\Gamma(k)} )
+-   **Función de Distribución**: Complicada para expresar en forma
+    cerrada.
+-   **Esperanza**: ( E(X) = \frac{k}{\lambda} )
+-   **Varianza**: ( \text{Var}(X) = \frac{k}{\lambda^2} )
+-   **Ejemplo**: Tiempo hasta la ( k )-ésima falla de una máquina.
+
+## 3. Distribución Beta
+
+-   **Definición**: Modela la distribución de probabilidades sobre un
+    intervalo fijo, útil en inferencia bayesiana.
+-   **Función de Densidad**: ( f(x) = \frac{x^{a-1}(1-x)^{b-1}}{B(a, b)}
+    )
+-   **Función de Distribución**: Complicada para expresar en forma
+    cerrada.
+-   **Esperanza**: ( E(X) = \frac{a}{a+b} )
+-   **Varianza**: ( \text{Var}(X) = \frac{ab}{(a+b)^2(a+b+1)} )
+-   **Ejemplo**: Proporción de tiempo que una persona pasa en redes
+    sociales en un día.
+
+## 4. Distribución Exponencial
+
+-   **Definición**: Tiempo entre eventos en un proceso de Poisson.
+-   **Función de Densidad**: ( f(x) = \lambda e\^{-\lambda x} )
+-   **Función de Distribución**: ( F(x) = 1 - e\^{-\lambda x} )
+-   **Esperanza**: ( E(X) = \frac{1}{\lambda} )
+-   **Varianza**: ( \text{Var}(X) = \frac{1}{\lambda^2} )
+-   **Ejemplo**: Tiempo entre llegadas a un banco.
+
+## 5. Distribución t de Student
+
+-   **Definición**: Utilizada para estimar la media de una población
+    normalmente distribuida cuando el tamaño de muestra es pequeño.
+-   **Función de Densidad**: ( f(x) =
+    \frac{\Gamma(\frac{v+1}{2})}{\sqrt{v\pi}\Gamma(\frac{v}{2})}
+    (1+\frac{x^2}{v})\^{-\frac{v+1}{2}} )
+-   **Función de Distribución**: Complicada para expresar en forma
+    cerrada.
+-   **Esperanza**: ( E(X) = 0 ) (para ( v \> 1 ))
+-   **Varianza**: ( \text{Var}(X) = \frac{v}{v-2} ) (para ( v \> 2 ))
+-   **Ejemplo**: Comparar el promedio de dos pequeñas muestras
+    independientes.
+
+## 6. Distribución F de Snedecor
+
+-   **Definición**: Comparación de varianzas de dos muestras
+    independientes.
+-   **Función de Densidad**: ( f(x) =
+    \frac{\sqrt{\frac{(d_1 x)^{d_1} d_2^{d_2}}{(d_1 x + d_2)^{d_1 + d_2}}}}{x B(\frac{d_1}{2}, \frac{d_2}{2})}
+    )
+-   **Función de Distribución**: Complicada para expresar en forma
+    cerrada.
+-   **Esperanza**: ( E(X) = \frac{d_2}{d_2-2} ) (para ( d_2 \> 2 ))
+-   **Varianza**: ( \text{Var}(X) =
+    \frac{2 d_2^2 (d_1 + d_2 - 2)}{d_1 (d_2-2)^2 (d_2-4)} ) (para ( d_2
+    \> 4 ))
+-   **Ejemplo**: Determinar si dos máquinas producen piezas con
+    variabilidad similar.
+
+## 7. Distribución Chi Cuadrado
+
+-   **Definición**: Suma de los cuadrados de ( k ) variables aleatorias
+    normales estándar independientes.
+-   **Función de Densidad**: ( f(x) = \frac{1}{2^{k/2} \Gamma(k/2)}
+    x\^{k/2-1} e\^{-x/2} )
+-   **Función de Distribución**: Complicada para expresar en forma
+    cerrada.
+-   **Esperanza**: ( E(X) = k )
+-   **Varianza**: ( \text{Var}(X) = 2k )
+-   **Ejemplo**: Prueba de hipótesis para independencia en tablas de
+    contingencia.
+
+## Algunas distribuciones continuas
+
+------------------------------------------------------------------------
+
+# Referencias {.center}
+
+-Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística.
+Recuperado de https://rpubs.com/jcsosam/803558
+
+-   Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the
+    social and behavioral sciences. John Wiley & Sons.
+
+-Rangel, J. (2022). Introducción a la estadística descriptiva
+\[Diapositivas de presentación\].
 
 -Peña, D. (2014). Fundamentos de estadística. Alianza editorial.
