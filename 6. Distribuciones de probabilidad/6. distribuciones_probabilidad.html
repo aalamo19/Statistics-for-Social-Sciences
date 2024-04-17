@@ -365,30 +365,21 @@ Andreina Alamo
 <li class="fragment"><span class="math inline">\(\operatorname{Var}(X) = \sum_{k=1}^K (k-E(X))^2\ f_X(k) = \sum_{k=1}^K \left(k - \frac{K+1}{2}\right)^2\ \frac{1}{K}\)</span> <span class="math inline">\(\quad\quad=\frac{K^2-1}{12}\)</span></li>
 </ul>
 </section>
-<section id="distribución-de-bernoulli" class="slide level2 center">
-<h2>2. Distribución de Bernoulli</h2>
-<ul>
-<li class="fragment"><strong>Definición</strong>: Modelo para un experimento con dos resultados posibles: éxito (1) o fracaso (0).</li>
-<li class="fragment"><strong>Función de Probabilidad</strong>: ( P(X = x) = p^x (1-p)^{1-x} )</li>
-<li class="fragment"><strong>Función de Distribución</strong>: No simplificada debido a la naturaleza de dos puntos.</li>
-<li class="fragment"><strong>Esperanza</strong>: ( E(X) = p )</li>
-<li class="fragment"><strong>Varianza</strong>: ( (X) = p(1-p) )</li>
-<li class="fragment"><strong>Ejemplo</strong>: Lanzar una moneda (éxito si sale cara).</li>
-</ul>
-</section>
 <section id="distribución-binomial" class="slide level2 center">
-<h2>3. Distribución Binomial</h2>
+<h2>2. Distribución Binomial</h2>
+<p>Si estamos con un experimento con dos resultados posibles, que podemos llamar éxito y fracaso, donde la probabilidad de obtener un éxito es <span class="math inline">\(p\)</span> y repetimos el experimento <span class="math inline">\(n\)</span> veces, el número de éxitos obtenidos en <span class="math inline">\(n\)</span> ensayos es una <strong>variable aleatoria con distribución binomial de parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span></strong></p>
+</section>
+<section id="propiedades-1" class="slide level2 center">
+<h2>Propiedades</h2>
+<p>Si <span class="math inline">\(X\)</span> es variable aleatoria con distribución binomial con probabilidad de éxito <span class="math inline">\(p\)</span> y número de ensayos <span class="math inline">\(n\)</span>, entonces:</p>
 <ul>
-<li class="fragment"><strong>Definición</strong>: Número de éxitos en ( n ) ensayos de Bernoulli independientes.</li>
-<li class="fragment"><strong>Función de Probabilidad</strong>: ( P(X = k) = p^k (1-p)^{n-k} )</li>
-<li class="fragment"><strong>Función de Distribución</strong>: Complicada para expresar en forma cerrada.</li>
-<li class="fragment"><strong>Esperanza</strong>: ( E(X) = np )</li>
-<li class="fragment"><strong>Varianza</strong>: ( (X) = np(1-p) )</li>
-<li class="fragment"><strong>Ejemplo</strong>: Lanzar 10 monedas, contar las caras.</li>
+<li class="fragment"><span class="math inline">\(f_X(k) = \binom{n}{k} p^k (1-p)^{n-k}\)</span></li>
+<li class="fragment"><span class="math inline">\(E(X) = np\)</span></li>
+<li class="fragment"><span class="math inline">\(\operatorname{Var}(X) = np(1-p)\)</span></li>
 </ul>
 </section>
 <section id="distribución-de-poisson" class="slide level2 center">
-<h2>4. Distribución de Poisson</h2>
+<h2>3. Distribución de Poisson</h2>
 <ul>
 <li class="fragment"><strong>Definición</strong>: Número de eventos en un intervalo fijo de tiempo o espacio cuando estos eventos ocurren con una tasa constante.</li>
 <li class="fragment"><strong>Función de Probabilidad</strong>: ( P(X = k) = )</li>
@@ -398,15 +389,10 @@ Andreina Alamo
 <li class="fragment"><strong>Ejemplo</strong>: Número de llamadas recibidas en una central telefónica en una hora.</li>
 </ul>
 </section>
-<section id="distribución-hipergeométrica" class="slide level2 center">
-<h2>5. Distribución Hipergeométrica</h2>
+<section id="otras-distribuciones" class="slide level2 center">
+<h2>Otras distribuciones</h2>
 <ul>
-<li class="fragment"><strong>Definición</strong>: Número de éxitos en una muestra de tamaño ( n ) extraída sin reemplazo de una población de tamaño ( N ) con ( K ) éxitos posibles.</li>
-<li class="fragment"><strong>Función de Probabilidad</strong>: ( P(X = k) = )</li>
-<li class="fragment"><strong>Función de Distribución</strong>: Complicada para expresar en forma cerrada.</li>
-<li class="fragment"><strong>Esperanza</strong>: ( E(X) = n )</li>
-<li class="fragment"><strong>Varianza</strong>: ( (X) = n (1 - ) )</li>
-<li class="fragment"><strong>Ejemplo</strong>: Escoger 10 cartas de un mazo, contar los ases.</li>
+<li class="fragment"></li>
 </ul>
 </section></section>
 <section>

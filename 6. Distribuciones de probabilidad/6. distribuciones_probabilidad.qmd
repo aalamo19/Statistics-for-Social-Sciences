@@ -53,9 +53,9 @@ Si estamos con un experimento con dos resultados posibles, que podemos llamar é
 
 Si $X$ es variable aleatoria con distribución binomial con probabilidad de éxito $p$ y número de ensayos $n$, entonces:
 
--   $f_X(k) = \binom{n}{k} p\^k (1-p)\^{n-k}$
--   $E(X) = np $
--   $\operatorname{Var}(X) =  np(1-p) $
+-   $f_X(k) = \binom{n}{k} p^k (1-p)^{n-k}$
+-   $E(X) = np$
+-   $\operatorname{Var}(X) =  np(1-p)$
 
 ## 3. Distribución de Poisson
 
