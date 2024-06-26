@@ -35,7 +35,7 @@ Sean $\Omega$ el conjunto universal, $A \in \Omega$ y $B \in \Omega$:
 2. Unión: $A \cup B=\{x \in \Omega: x \in A$ o $x \in B\}$
 3. Intersección: $A \cap B=\{x \in \Omega: x \in A$ y $x \in B\}$
 4. Diferencia: $A-B=\{x \in \Omega: x \in A$ y $x \notin B\}$
-5. Leyes de Morgan: $(A \cup B)^c=A^c \cap B^c$ y $(A \cap B)^c=A^c \cup B^c$
+5. Leyes de De Morgan: $(A \cup B)^c=A^c \cap B^c$ y $(A \cap B)^c=A^c \cup B^c$
 
 ## 
 
@@ -91,9 +91,10 @@ En consulta, un médico determina que su paciente debe tomar medicación para do
 . . .
 
 Así, el número de prescripciones es: $n_1 * n_2=3 * 5=15$.
-Nota: al resultado de la multiplicación de los $n$ primeros enteros se le llama $n$!,
 
----
+----
+
+**Nota:** al resultado de la multiplicación de los $n$ primeros enteros se le llama $n$!,
 
 
 $$

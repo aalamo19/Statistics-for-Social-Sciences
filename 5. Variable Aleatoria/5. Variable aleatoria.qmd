@@ -64,11 +64,11 @@ curve(cuadr,-2,2,ylab="y",col="cadetblue",lwd=4)
 
 - Además, por medio de estas funciones es posible calcular todo tipo de medidas (e.g., tendencia central) a nivel poblacional. En este contexto, tales medidas se denominan parámetros.
 
-## Variable aleatoria (v.a.)
+## Variable aleatoria real (v.a.r.)
 
 Una variable aleatoria es una función que asigna un valor, usualmente numérico, al resultado de un experimento aleatorio.
 
-Así una variable aleatoria $X$ es una función cuyo dominio es $\Omega$ y recorrido $\mathcal{R}$, que asigna un único número real a cada resultado del espacio muestral $\Omega$ de un experimento aleatorio.
+Así una variable aleatoria $X$ es una función cuyo dominio es $\Omega$ y recorrido $\mathbb{R}$, que asigna un único número real a cada resultado del espacio muestral $\Omega$ de un experimento aleatorio.
 
 $$ \begin{align*}
   f : \Omega &\longmapsto \mathbb{R} \\
@@ -113,7 +113,7 @@ $$
 y $X$ es una v.a. discreta con valores:
 $$
 X((c, c, c))=3, X((c, c, s))=2, X((c, s, c))=2, X((s, c, c))=2, \\
-X((s, s, c))=1, X((s, c, s))=1, X((c, s, s))=1 \mathrm{y}
+X((s, s, c))=1, X((s, c, s))=1, X((c, s, s))=1 \mathrm{ y }
 X((s, s, s))=0
 $$
 
@@ -126,6 +126,8 @@ $$
 La **función de probabilidad** o **función másica de probabilidad** de una variable aleatoria discreta describe teóricamente la forma en que varían los resultados de un experimento aleatorio. Intuitivamente se trataría de una lista de los resultados posibles de un experimento con las probabilidades que se esperarían ver asociadas con cada resultado.
 
 Es decir, nos da todas las probabilidades de todos los posibles resultados que podrían obtenerse cuando se realiza un experimento aleatorio.
+
+----
 
 La función de densidad de una variable aleatoria $X$ se denota $f_X (x)$.
 
@@ -147,6 +149,8 @@ $$
 & f_X(3)=\mathrm{P}(X=3)=\operatorname{Pr}((c, c, c))=\frac{1}{8}=0.125 .
 \end{aligned}
 $$
+
+----
 
 Además, se observa que:
 
@@ -175,7 +179,7 @@ segments(x0 = x, y0 = 0, x1 = x, y1 = fx, lwd = 2, col = "blueviolet")
 ## Función de distribución
 
 La función de distribución ($F_X$) es aquella que calcula la probabilidad acumulada hasta un punto $x$.
-Describe la probabilidad de que una variable aleatoria $X$ sujeta a cierta ley de distribución de probabilidad se sitúe en la zona de valores menores o iguales a $x$.
+Describe la probabilidad de que una variable aleatoria $X$ sujeta a cierta distribución de probabilidad, se sitúe en la zona de valores menores o iguales a $x$.
 
 <p align="center">
 <img src="distribucion.png" width="400">
@@ -392,6 +396,7 @@ lines(grid,dnorm(grid,mean=1.6,sd=0.05),type="l",lwd=2)
 La probabilidad de que algún estudiante mida entre 1.55m y 1.63m sería
 
 ```{r prob}
+#| echo: true
 pnorm(1.63,mean=1.6,sd=0.05)-pnorm(1.55,mean=1.6,sd=0.05)
 ```
 
@@ -418,16 +423,20 @@ abline(v = 1.61, col = "red", lty = 2,lwd=2)
 Así, la probabilidad de que algún estudiante mida 1.61m o menos es:
 
 ```{r prob_dist}
+#| echo: true
 pnorm(1.61,mean=1.6,sd=0.05)
 ```
 
+# Valor Esperado y Varianza
+
+Estos conceptos en el caso de variables aleatorias son análogos, sin embargo no se presenta la definción matemática puesto que implica conceptos matemáticos externos a los objetivos del curso.
 
 # Referencias
 
-1.Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558
+1. Buitrago, L., & Sosa, J. (s.f.). Introducción a la Estadística. Recuperado de https://rpubs.com/jcsosam/803558
 
-2.Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley & Sons.
+2. Cohen, B. H., & Lea, R. B. (2004). Essentials of statistics for the social and behavioral sciences. John Wiley & Sons.
 
-3.Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
+3. Rangel, J. (2022). Introducción a la estadística descriptiva [Diapositivas de presentación].
 
-4.Peña, D. (2014). Fundamentos de estadística. Alianza editorial.
+4. Peña, D. (2014). Fundamentos de estadística. Alianza editorial.
